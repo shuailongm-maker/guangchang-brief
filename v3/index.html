@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>光厂 · 达人合作手册（视频 / 图文 / 切片）V3.0</title>
+<style>
+  :root{
+    --bg:#f7f8fc;
+    --paper:#ffffff;
+    --ink:#141826;
+    --ink-2:#3a3f52;
+    --muted:#79809a;
+    --line:#e6e8f2;
+    --line-2:#eef0f7;
+    --accent:#365ae6;
+    --accent-soft:#ecf0ff;
+    --warm:#ff59a5;
+    --warm-soft:#fff0f7;
+    --cyan:#00e6ec;
+    --cyan-soft:#e6feff;
+    --cyan-ink:#00a3ad;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(20,24,38,.04),0 10px 30px -16px rgba(54,90,230,.22);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:linear-gradient(180deg,#f8f9fd 0%,#fdf7fb 45%,#f5fdfe 100%) fixed;
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:15px;line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* 阅读进度 */
+  .progress{
+    position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--warm),var(--accent) 55%,var(--cyan));
+    z-index:99;transition:width .1s linear;
+  }
+
+  .layout{
+    display:grid;grid-template-columns:248px minmax(0,1fr);
+    gap:48px;max-width:1240px;margin:0 auto;padding:44px 40px 100px;
+  }
+
+  /* ---------- 侧栏 ---------- */
+  .side-inner{position:sticky;top:44px}
+  .side-brand{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:700;letter-spacing:.02em}
+  .brand-logo{height:26px;width:auto;display:block;mix-blend-mode:multiply}
+  .side-brand span{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.08em}
+  .side-sub{font-size:12px;color:var(--muted);margin:4px 0 26px}
+  /* 品牌头 + 语言切换 */
+  .brand{padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+  .brand-top{display:flex;align-items:center;gap:9px;min-width:0}
+  .brand-logo-img{height:26px;width:auto;display:block;border-radius:6px;mix-blend-mode:multiply}
+  .brand-name{font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.01em;line-height:1.45;overflow:hidden}
+  .lang-switch{display:inline-flex;align-items:center;margin-top:12px;padding:2px;background:#f2f4fb;border:1px solid var(--line);border-radius:999px}
+  .lang-switch button{appearance:none;border:none;background:transparent;font:inherit;font-size:12px;line-height:1.6;color:var(--muted);padding:3px 11px;border-radius:999px;cursor:pointer;transition:.18s;white-space:nowrap}
+  .lang-switch button:hover{color:var(--ink-2)}
+  .lang-switch button.active{background:#fff;color:var(--accent);font-weight:600;box-shadow:0 1px 2px rgba(20,24,38,.06)}
+  .lang-sep{font-size:11px;color:#c1c7d8;margin:0 1px;user-select:none}
+  .side-nav{display:flex;flex-direction:column;border-left:1px solid var(--line)}
+  .side-nav a{
+    display:block;font-size:13.5px;color:var(--ink-2);
+    padding:7px 0 7px 16px;margin-left:-1px;
+    border-left:2px solid transparent;text-decoration:none;transition:.18s;
+  }
+  .side-nav a:hover{color:var(--accent);border-left-color:var(--accent)}
+  .side-nav a.active{color:var(--accent);border-left-color:var(--accent);font-weight:600}
+  .side-nav a .num{font-size:11px;color:var(--muted);margin-right:8px;font-variant-numeric:tabular-nums}
+  .side-foot{
+    margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:11.5px;color:var(--muted);line-height:1.9;
+  }
+
+  /* ---------- 封面 ---------- */
+  .hero{
+    background:linear-gradient(140deg,#0a1233 0%,#17285f 42%,#2f52e0 100%);
+    color:#fff;border-radius:24px;padding:44px 44px 36px;
+    position:relative;overflow:hidden;margin-bottom:40px;
+  }
+  .hero::before{
+    content:"";position:absolute;left:-120px;bottom:-140px;width:360px;height:360px;
+    background:radial-gradient(circle,rgba(255,89,165,.22),transparent 68%);border-radius:50%;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-100px;top:-100px;width:340px;height:340px;
+    background:radial-gradient(circle,rgba(0,230,236,.26),transparent 68%);border-radius:50%;
+  }
+  .hero-logo{
+    height:38px;width:auto;display:block;background:#fff;
+    border-radius:10px;padding:7px 10px;margin-bottom:20px;
+    position:relative;z-index:1;
+  }
+  .hero-tag{
+    display:inline-block;font-size:11px;letter-spacing:.16em;color:#c3d4ff;
+    background:rgba(140,172,255,.14);
+    border:1px solid rgba(150,180,255,.45);border-radius:999px;padding:4px 12px;margin-bottom:18px;
+  }
+  .hero h1{font-size:34px;line-height:1.3;font-weight:700;position:relative;z-index:1}
+  .hero-desc{
+    margin-top:14px;max-width:640px;font-size:14px;color:#b9c4d8;line-height:1.85;
+    position:relative;z-index:1;
+  }
+  .hero-desc strong{color:#fff;font-weight:600}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;position:relative;z-index:1}
+  .hero-meta span{
+    font-size:12px;color:#d5ddef;background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:5px 11px;
+  }
+  .statband{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    margin-top:30px;border-top:1px solid rgba(255,255,255,.14);
+    padding-top:22px;position:relative;z-index:1;
+  }
+  .statband div{padding-right:16px}
+  .statband div + div{border-left:1px solid rgba(255,255,255,.14);padding-left:18px}
+  .statband b{display:block;font-size:24px;font-weight:700;letter-spacing:.01em;line-height:1.3}
+  .statband b i{font-style:normal;font-size:13px;font-weight:500;color:#a9bcff;margin-left:2px}
+  .statband span{font-size:11.5px;color:#93a2bd;letter-spacing:.02em}
+  .scope{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;position:relative;z-index:1}
+  .scope a{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;padding:13px 16px;color:#fff;transition:.2s;
+  }
+  .scope a:hover{background:rgba(255,255,255,.12);text-decoration:none}
+  .scope b{display:block;font-size:10.5px;color:#8fa3c9;letter-spacing:.12em;margin-bottom:2px}
+  .scope strong{font-size:14.5px;font-weight:600}
+  .scope em{display:block;font-style:normal;font-size:11.5px;color:#93a2bd;margin-top:2px}
+
+  /* ---------- 章节 ---------- */
+  section{margin-bottom:54px;scroll-margin-top:36px}
+  .sec-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+  .sec-num{
+    font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);
+    border-radius:8px;padding:4px 9px;letter-spacing:.08em;margin-top:6px;flex:0 0 auto;
+  }
+  .sec-head h2{font-size:23px;font-weight:700;line-height:1.45}
+  .sec-head p{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.8}
+
+  h3.block-title{
+    font-size:16.5px;font-weight:700;margin:34px 0 14px;
+    display:flex;align-items:center;gap:9px;scroll-margin-top:36px;
+  }
+  h3.block-title::before{content:"";width:4px;height:16px;border-radius:2px;background:linear-gradient(180deg,var(--warm),var(--cyan))}
+  h4{font-size:14.5px;font-weight:700;margin-bottom:6px}
+  h4.mini{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.04em;margin:20px 0 8px}
+  h4.step{font-size:15px;font-weight:700;margin:22px 0 6px;display:flex;align-items:center;gap:9px}
+  h4.step::before{content:"";width:4px;height:16px;border-radius:2px;background:linear-gradient(180deg,var(--warm),var(--cyan))}
+
+  .card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow);
+  }
+  .card + .card{margin-top:14px}
+  .lead{font-size:14px;color:var(--ink-2);margin-bottom:14px;line-height:1.85}
+
+  /* 表格 */
+  .table-wrap{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top}
+  th{width:150px;font-weight:600;color:var(--muted);font-size:12.5px;letter-spacing:.03em;background:#fafbff}
+  tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
+  td strong{font-weight:600}
+
+  /* Tab */
+  .tabs{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .tab-bar{display:flex;gap:4px;padding:10px 14px 0;border-bottom:1px solid var(--line-2);background:#fafbff}
+  .tab-btn{
+    appearance:none;border:none;background:transparent;font:inherit;font-size:13px;font-weight:600;
+    color:var(--muted);padding:9px 12px;border-radius:9px 9px 0 0;cursor:pointer;
+    border-bottom:2px solid transparent;margin-bottom:-1px;
+  }
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{color:var(--accent);background:var(--paper);border-bottom-color:var(--accent)}
+  .tab-panel{display:none;padding:24px 26px}
+  .tab-panel.active{display:block}
+
+  /* 列表 */
+  ul.clean{list-style:none}
+  ul.clean > li{position:relative;padding-left:20px;margin-bottom:10px;font-size:14px;color:var(--ink-2);line-height:1.8}
+  ul.clean > li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:#c9c3b6}
+  ul.clean > li > b{color:var(--ink);font-weight:600}
+  ul.sub{list-style:none;margin-top:6px}
+  ul.sub li{position:relative;padding-left:14px;font-size:13.5px;color:#5c6472;margin-bottom:5px;line-height:1.75}
+  ul.sub li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:#c9c3b6}
+  .note{font-size:12px;color:var(--muted);margin-top:8px}
+
+  /* 合作形式：形式卡 + 规格并排 */
+  .mode-stack{display:flex;flex-direction:column;gap:16px}
+  .mode-block{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);display:grid;grid-template-columns:272px minmax(0,1fr);overflow:hidden;
+  }
+  .mode-head{padding:22px 26px;background:linear-gradient(160deg,#fff7fb 0%,#f4feff 100%);border-right:1px solid var(--line-2)}
+  .mode-head .k{font-size:10.5px;letter-spacing:.12em;color:var(--warm);font-weight:700;margin-bottom:6px}
+  .mode-head h4{font-size:17px;margin-bottom:8px}
+  .mode-head p{font-size:12.5px;color:var(--ink-2);line-height:1.85}
+  .mode-head .when{
+    margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);
+    font-size:12px;color:var(--muted);line-height:1.85;
+  }
+  .mode-block .spec{margin:0;padding:20px 26px;background:transparent;border:none;border-radius:0}
+  .mode-block .spec-list{grid-template-columns:96px minmax(0,1fr)}
+
+  /* 选择建议 */
+  .decision{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .decision .d{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);
+  }
+  .decision .d .k{font-size:10.5px;letter-spacing:.12em;color:var(--warm);font-weight:700;margin-bottom:8px}
+  .decision .d h4{font-size:15.5px;margin-bottom:10px}
+  .decision .d p{font-size:13px;color:var(--ink-2);line-height:1.8}
+  .decision .d p b{color:var(--ink)}
+  .decision .d .when{
+    margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);
+    font-size:12.5px;color:var(--muted);line-height:1.75;
+  }
+
+  /* 合作概览条 */
+  .overview{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;margin-bottom:22px;box-shadow:var(--shadow);
+  }
+  .overview div{padding:14px 18px}
+  .overview div + div{border-left:1px solid var(--line-2)}
+  .overview span{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;margin-bottom:3px}
+  .overview strong{font-size:13.5px;font-weight:600;line-height:1.6;display:block}
+
+  /* 内容方向 */
+  .direction{
+    background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--warm);
+    border-radius:0 14px 14px 0;padding:20px 24px;margin-bottom:12px;
+  }
+  .dir-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .dir-head h4{font-size:15px}
+  .dir-head em{font-style:normal;font-size:11.5px;color:var(--muted);background:#f2f4fb;border-radius:5px;padding:3px 8px}
+  .direction p{font-size:13.5px;color:var(--ink-2);line-height:1.85}
+
+  /* 案例 */
+  .cases{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+  .cases .label{font-size:11px;color:var(--muted);letter-spacing:.08em;display:block;margin-bottom:8px}
+  .case-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .case-list.single{grid-template-columns:1fr}
+  .case{
+    display:flex;gap:10px;align-items:flex-start;
+    background:#fafbff;border:1px solid var(--line-2);border-radius:9px;
+    padding:9px 12px;font-size:12.5px;color:var(--ink-2);line-height:1.65;
+  }
+  .case .plat{
+    flex:0 0 auto;font-size:10.5px;font-weight:600;letter-spacing:.02em;
+    border-radius:4px;padding:1px 6px;margin-top:2px;
+    background:#eef0f4;color:#5b6472;
+  }
+  .case .plat.dy{background:#1a1d2b;color:#fff}
+  .case .plat.xhs{background:#ffe4f1;color:#d62f7c}
+  .case .plat.bili{background:#e4fbfd;color:#009aa3}
+  .case a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid #d8d2c4}
+  .case a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .case .txt{flex:1 1 auto}
+
+  /* 规格表 */
+  .spec{background:#fafbff;border:1px solid var(--line);border-radius:12px;padding:18px 26px;margin-top:16px}
+  .spec > h5{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--warm);margin-bottom:10px}
+  .spec-list{display:grid;grid-template-columns:112px 1fr;gap:0}
+  .spec-list dt{
+    font-size:12.5px;font-weight:600;color:var(--ink);padding:11px 0;
+    border-top:1px solid var(--line-2);line-height:1.7;
+  }
+  .spec-list dd{
+    font-size:13.5px;color:var(--ink-2);padding:11px 0 11px 8px;
+    border-top:1px solid var(--line-2);line-height:1.8;
+  }
+  .spec-list dt:first-of-type,.spec-list dd:first-of-type{border-top:none;padding-top:2px}
+  .spec-list dd b{color:var(--ink);font-weight:600}
+
+  /* 通用要求 */
+  .rules{counter-reset:r;list-style:none}
+  .rules li{
+    counter-increment:r;position:relative;padding:13px 0 13px 44px;
+    border-bottom:1px solid var(--line-2);font-size:14px;color:var(--ink-2);line-height:1.8;
+  }
+  .rules li:last-child{border-bottom:none}
+  .rules li::before{
+    content:counter(r,decimal-leading-zero);position:absolute;left:0;top:15px;
+    font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-soft);
+    border-radius:6px;padding:2px 6px;
+  }
+
+  /* 附录 */
+  .appendix-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .appendix-grid .card{padding:20px 26px}
+  .appendix-grid h4{font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .appendix-grid h4 .idx{font-size:10.5px;color:#fff;background:var(--accent);border-radius:5px;padding:1px 6px;letter-spacing:.04em}
+  .appendix-grid ul.clean > li{font-size:13px;margin-bottom:7px;padding-left:15px}
+  .appendix-grid ul.clean > li::before{top:9px;width:4px;height:4px}
+
+  .notice{background:var(--warm-soft);border:1px solid #ffd4e7;border-radius:12px;padding:14px 18px;font-size:13px;color:#8a2a55;line-height:1.8}
+  .notice b{color:#6d1c42}
+
+  footer{border-top:1px solid var(--line);padding-top:22px;font-size:12px;color:var(--muted);line-height:1.9}
+  footer strong{color:var(--ink-2)}
+
+  .backtop{
+    position:fixed;right:28px;bottom:28px;width:40px;height:40px;border-radius:50%;
+    background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+    display:flex;align-items:center;justify-content:center;color:var(--ink-2);
+    font-size:15px;text-decoration:none;opacity:0;pointer-events:none;transition:.25s;
+  }
+  .backtop.show{opacity:1;pointer-events:auto}
+  .backtop:hover{color:var(--accent);text-decoration:none}
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;gap:26px;padding:24px 18px 80px}
+    .side-inner{position:static}
+    .side-nav{flex-direction:row;flex-wrap:wrap;border-left:none;gap:6px;margin:0;padding:0}
+    .side-nav a{margin-left:0;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:#fff;font-size:12.5px}
+    .side-nav a .num{display:none}
+    .side-sub{margin-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:12px;margin-bottom:14px}
+    .brand-top{gap:8px}
+    .brand-logo-img{height:22px}
+    .brand-name{font-size:12.5px}
+    .lang-switch{margin-top:0;margin-left:auto;padding:1px}
+    .lang-switch button{font-size:11.5px;padding:2px 9px}
+    .side-foot{display:none}
+    .hero{padding:30px 22px}
+    .hero h1{font-size:25px}
+    .statband{grid-template-columns:repeat(2,1fr);gap:16px 0}
+    .statband div:nth-child(3){border-left:none;padding-left:0}
+    .scope,.decision,.appendix-grid,.overview,.case-list{grid-template-columns:1fr}
+    .mode-block{grid-template-columns:1fr}
+    .mode-head{border-right:none;border-bottom:1px solid var(--line-2)}
+    .mode-block .spec{padding:18px 26px}
+    .mode-block .spec-list{grid-template-columns:1fr}
+    .overview div + div{border-left:none;border-top:1px solid var(--line-2)}
+    .spec-list{grid-template-columns:1fr}
+    .spec-list dd{padding-left:0;padding-top:0;border-top:none}
+    .spec-list dt{padding-bottom:2px}
+    th{width:110px}
+  }
+
+  @media print{
+    body{background:#fff;font-size:11pt}
+    .sidebar,.progress,.backtop{display:none}
+    .layout{display:block;padding:0;max-width:none}
+    .hero{background:#fff;color:#000;border:1px solid #ccc}
+    .hero::after{display:none}
+    .hero-desc,.hero-meta span,.statband span,.statband b i{color:#444}
+    section{page-break-inside:auto}
+    .direction,.card,.tabs,.table-wrap{box-shadow:none;page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress" style="width: 45.6461%;"></div>
+
+<div class="layout">
+
+  <!-- ================= 侧栏 ================= -->
+  <aside class="sidebar">
+    <div class="side-inner">
+      <div class="brand">
+        <div class="brand-top">
+          <img class="brand-logo-img" src="data:image/png;base64,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" alt="Guangchang">
+          <span class="brand-name" data-tr="brand-name">光厂达人合作手册2026</span>
+        </div>
+        <div class="lang-switch" role="group" aria-label="中文 / English">
+          <button type="button" class="active" data-lang="zh">中文</button>
+          <span class="lang-sep">/</span>
+          <button type="button" data-lang="en">English</button>
+        </div>
+      </div>
+
+      <nav class="side-nav" id="nav" style="position: relative;">
+        <a href="#brand" class="top" data-tr="nav-brand"><span class="num">01</span>品牌与业务卖点</a>
+        <a href="#formats" class="top active" style="" data-tr="nav-formats"><span class="num">02</span>合作形式</a>
+        <a href="#rules" class="top" style="" data-tr="nav-rules"><span class="num">03</span>发布与竞品规则</a>
+        <a href="#general" class="top" style="" data-tr="nav-general"><span class="num">04</span>合作要求</a>
+        <a href="#overseas" class="top" style="" data-tr="nav-overseas"><span class="num">05</span>海外达人注意事项</a>
+      </nav>
+      <div class="side-foot" data-tr="side-foot">
+        本手册用于达人合作沟通，<br>具体约定以双方合同及书面沟通确认为准。
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= 正文 ================= -->
+  <main>
+
+    <!-- 封面 -->
+    <div class="hero">
+      
+      <div class="hero-tag">CREATOR COOPERATION HANDBOOK</div>
+      <h1 data-tr="hero-title">光厂达人合作手册2026</h1>
+      <div class="hero-desc" data-tr="hero-desc" data-page-id="SyCJdhFP6oFP5yxl2i7c4u2tnPg" data-lark-html-role="root" data-docx-has-block-data="false"><div class="ace-line ace-line old-record-id-HgqxdQ1TPot3WoxDIAxckQ4Cnzg">光厂<span style="color:rgb(36,91,219)"></span>是成都光厂创意科技有限公司旗下运营的<strong>商用版权视频交易网站</strong>。拥有超4000万优质正版素材，覆盖<strong>视频、音乐、图片、音效</strong>等全品类，市场占有率超过50%。光厂同时也是影视、广告、营销等视听创作领域从业者喜爱并聚集的社区。</div></div></div>
+
+    <!-- ============ 01 品牌与业务 ============ -->
+    <section id="brand">
+      <div class="sec-head">
+        <div class="sec-num">01</div>
+        <div>
+          <h2 data-tr="s1-title">品牌与业务卖点</h2>
+          
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th data-tr="s1-th-brand">品牌名称</th><td data-tr="s1-td-brand"><strong>光厂</strong></td></tr>
+            <tr><th data-tr="s1-th-site">官方网站</th><td><a href="https://www.vjshi.com" target="_blank" rel="noopener">https://www.vjshi.com</a></td></tr>
+            <tr><th data-tr="s1-th-pos">品牌定位</th><td data-tr="s1-td-pos">一站式正版素材交易网站</td></tr>
+            <tr><th data-tr="s1-th-slogan">品牌 Slogan</th><td data-tr="s1-td-slogan">让创意更有价值，让世界更生动</td></tr>
+            <tr><th data-tr="s1-th-lines">业务线名称</th><td data-tr="s1-td-lines">光厂视频、光厂音乐、光厂图片、光厂接单、光厂片场、光厂版权中心</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 光厂视频 -->
+      <h3 class="block-title" data-tr="h3-video">光厂视频</h3>
+      <div class="tabs">
+        <div class="tab-bar">
+          <button class="tab-btn" data-tab="v-buyer" data-tr="tab-buyers">买方客户</button>
+          <button class="tab-btn active" data-tab="v-seller" data-tr="tab-contributors">供稿人</button>
+        </div>
+
+        <div class="tab-panel" id="v-buyer">
+          <h4 data-tr="h4-audience">受众画像</h4>
+          <p class="lead" data-tr="v1-lead">广告公司、影视制作机构、品牌新媒体、企业内容团队<span style="color: rgb(99, 102, 241); font-family: Outfit, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-weight: 700; background-color: rgba(255, 255, 255, 0.72);"></span>、媒体单位、自媒体创作者等。</p>
+
+          <h4 class="mini" data-tr="h4-usecases">需求场景</h4>
+          <ul class="clean">
+            <li data-tr="v1-use-1">项目赶工，需要现成模板或素材快速出片</li>
+            <li data-tr="v1-use-2">素材漏拍，天气、设备等原因无法补拍</li>
+            <li data-tr="v1-use-3">预算有限，自己实拍成本过高</li>
+          </ul>
+          <p class="note" data-tr="v1-use-note">以上场景都可通过光厂实现降本增效。</p>
+
+          <h4 class="mini" data-tr="h4-highlights">业务亮点</h4>
+          <ul class="clean">
+            <li data-tr="v1-hl-search"><b>行业领先的搜索算法</b>，创作者能快速、精准检索到所需素材，省时省力，提升内容制作效率。
+              <ul class="sub">
+                <li><b>关键词搜索：</b>首页搜索框输入关键词或素材编号，快速定位目标素材。</li>
+                <li><b>AI 搜索（光锥引擎）：</b>支持分镜描述、提示词整句输入，口语化、抽象的表述也能识别，不必自己拆关键词；结果优先给出审美水准较高的画面，减少反复筛选。</li>
+                <li><b>画面搜索：</b>把参考截图或视频直接拖进图像搜索框，按画面找相似素材。</li>
+              </ul>
+            </li>
+            <li data-tr="v1-hl-library"><b>海量、丰富、本土化、更新快</b>，可按不同商用场景下载使用，满足个性化需求。
+              <ul class="sub">
+                <li><b>本土化：</b>多数免费外国素材站以欧美场景为主，不太适合国内项目需求。</li>
+                <li><b>类型广泛：</b>覆盖高清实拍、AE / PR 模板、C4D 模型、动画特效，满足多种商业场景。</li>
+                <li><b>更新快：</b>以本土场景为主，且有超 10 万个人供稿人，赶时效的项目也能跟上。</li>
+              </ul>
+            </li>
+            <li data-tr="v1-hl-license"><b>授权范围清晰：</b>个人授权、企业授权、企业 plus 授权三种方式，可按项目使用场景灵活选择；同一授权主体全球永久授权，多平台分发也不用担心侵权风险。</li>
+            <li data-tr="v1-hl-years"><b>成立十四年</b>，视频素材行业老字号，市场占有率高达 <strong>50%</strong>，在圈层内拥有良好口碑。</li>
+          </ul>
+
+          <div class="cases">
+            <span class="label" data-tr="label-buyer">参考案例 · 买方视角</span>
+            <div class="case-list">
+              <div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-vb-1" style="position: relative;"><a href="https://www.douyin.com/user/MS4wLjABAAAA4aWi4TCV-An99Jplq-Nzs9QmEFrbY38KpIP6RhZs2fk?from_tab_name=main&amp;modal_id=7681491235584437094" target="_blank" rel="noopener">一定要让vlog显贵3招教会你</a></span></div>
+              
+              <div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-vb-3"><a href="https://douyin.com/video/7497064922111642943" target="_blank" rel="noopener">做视频的 A-Roll 和 B-Roll 是什么意思？</a></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel active" id="v-seller">
+          <h4 data-tr="h4-highlights">业务亮点</h4>
+          <ul class="clean">
+            <li data-tr="v2-hl-1">创作者闲置通用素材再利用，实现素材价值最大化。<br><span class="note">注：相关推广需强调必须是原创作品，严禁搬运和盗卖。</span></li>
+            <li data-tr="v2-hl-2">自主上传、自主定价，可全职可兼职，创作时间自由，适合内容创作行业人员的副业方式。</li>
+            <li data-tr="v2-hl-3">独家供稿人 <strong>70%</strong> 销售提成，非独家供稿人 <strong>60%</strong> 销售提成，提现速度快。</li>
+            <li data-tr="v2-hl-4">百万级流量、买家多，作品曝光及转化率优于同行业；优质作品售出更快，同一素材可多次销售，提高创作者的"睡后收入"。</li>
+            <li data-tr="v2-hl-5">为独家供稿人提供免费版权存证和维权服务，保障创作者权益。</li>
+          </ul>
+
+          <div class="cases">
+            <span class="label" data-tr="label-contributor">参考案例 · 供稿人视角</span>
+            <div class="case-list">
+              <div class="case"><span class="plat bili" data-tr="plat-bilibili">B站</span><span class="txt" data-tr="case-vs-1"><a href="https://bilibili.com/video/BV1EP411d7QZ" target="_blank" rel="noopener">保姆级攻略：就这一项，我一年多挣 20 万</a></span></div>
+              <div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-vs-2"><a href="https://v.douyin.com/i5g9CkJj/" target="_blank" rel="noopener">"希望你的热爱是能够细水长流持续发光的源泉" #vlog #光厂</a></span></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 光厂音乐 -->
+      <h3 class="block-title" data-tr="h3-music">光厂音乐</h3>
+      <div class="tabs">
+        <div class="tab-bar">
+          <button class="tab-btn" data-tab="m-buyer" data-tr="tab-buyers">买方客户</button>
+          <button class="tab-btn active" data-tab="m-seller" data-tr="tab-musicians">音乐人</button>
+        </div>
+
+        <div class="tab-panel" id="m-buyer">
+          <h4 data-tr="h4-audience">受众画像</h4>
+          <p class="lead" data-tr="m1-lead">广告公司、影视制作机构、品牌新媒体、企业内容团队、媒体单位、自媒体创作者等。</p>
+
+          <h4 class="mini" data-tr="h4-usecases">需求场景</h4>
+          <ul class="clean">
+            <li data-tr="m1-use-1">商单成片需要正版配乐</li>
+            <li data-tr="m1-use-2">多平台分发，担心音乐侵权</li>
+            <li data-tr="m1-use-3">预算有限，请不起专业作曲定制</li>
+          </ul>
+          <p class="note" data-tr="m1-use-note">可在光厂音乐高效筛选、即买即用，避免版权风险。</p>
+
+          <h4 class="mini" data-tr="h4-highlights">业务亮点</h4>
+          <ul class="clean">
+            <li data-tr="m1-hl-1">数十万首不同风格的版权音乐，覆盖宣传片、广告片、院线影视、综艺节目、Vlog、短视频、直播等多场景。</li>
+            <li data-tr="m1-hl-2">音乐均来自国内外知名版权音乐供应商，每次购买光厂都会提供授权书，版权有保障。</li>
+            <li data-tr="m1-hl-3">可按使用场景灵活选择企业或个人授权，下载后随片授权永久有效，全球通用。</li>
+            <li data-tr="m1-hl-4">支持按情绪、节奏感、唱腔、鼓点等维度与关键词筛选，下载前可无限试听。</li>
+          </ul>
+
+          <div class="cases">
+            <span class="label" data-tr="label-buyer">参考案例 · 买方视角</span>
+            <div class="case-list">
+              <div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-mb-1"><a href="https://v.douyin.com/FlBy4HEANJk/" target="_blank" rel="noopener">剪辑师的修改意见含金量还在上升</a></span></div>
+              <div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-mb-2"><a href="https://v.douyin.com/xUvnCKYCPPQ/" target="_blank" rel="noopener">我用一条宣传片跟老板换了一顿火锅吃</a></span></div>
+              
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel active" id="m-seller">
+          <h4 data-tr="h4-highlights">业务亮点</h4>
+          <ul class="clean">
+            <li data-tr="m2-hl-1">为优质原创音乐作品提供多元变现渠道，音乐人个人 / 企业店铺作品销售收益比例高至 <strong>70%</strong>。</li>
+            <li data-tr="m2-hl-2">成熟的视频素材业务带来百万级刚需流量，视频带货 + 歌单分佣推广，助力音乐作品销售。</li>
+          </ul>
+
+          <div class="cases">
+            <span class="label" data-tr="label-musician">参考案例 · 音乐人视角</span>
+            <div class="case-list single">
+              <div class="case"><span class="plat bili" data-tr="plat-bilibili">B站</span><span class="txt" data-tr="case-ms-1"><a href="https://bilibili.com/video/BV1jh411K7d8" target="_blank" rel="noopener">【聊行业】职业音乐人从业四年才懂的一些东西…</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 光厂音效 -->
+      <h3 class="block-title" data-tr="h3-sfx">光厂音效（免费下载）</h3>
+      <div class="card">
+        <ul class="clean" style="margin-bottom:0">
+          <li data-tr="sfx-1">海量专业音效，覆盖游戏、交通、人声、生活、自然等全场景，轻松提升作品质感与趣味。</li>
+          <li data-tr="sfx-2">每日免费下载，注册即享 5 次额度。</li>
+          <li data-tr="sfx-3">支持自定义收藏夹，打造个人专属音效库。</li>
+          <li data-tr="sfx-4">无需逐一点击，鼠标悬停即可流畅播放。</li>
+          <li data-tr="sfx-5"><b>供稿人说明：</b>暂不支持用户自主上传。</li>
+          <li data-tr="sfx-6"><b>推广说明：</b>光厂音效不作为单独推广，相关内容可结合光厂音乐统一进行。</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ============ 02 合作形式 ============ -->
+    <section id="formats" style="position: relative;">
+      <div class="sec-head">
+        <div class="sec-num">02</div>
+        <div>
+          <h2 data-tr="s2-title">合作形式</h2>
+          <p data-tr="s2-desc">视频、图文、切片、共创四类合作模式，可按账号属性与内容形态匹配。</p>
+        </div>
+      </div>
+
+      
+      <div class="mode-stack">
+
+        <div class="mode-block">
+          <div class="mode-head">
+            <div class="k">MODE 01</div>
+            <h4 data-tr="mode1-title">定制视频</h4>
+            <p data-tr="mode1-for"><b>适合：</b>出镜 / 口播能力强、能实操演示的账号，如影视后期、摄影、数码科技、剪辑教学。</p>
+            
+          </div>
+          <div class="spec">
+            <h5 data-tr="mode1-h5">视频内容规格要求</h5>
+            <dl class="spec-list">
+              <dt data-tr="mode1-dt-1">数量</dt>
+              <dd data-tr="mode1-dd-1">1 条原创视频</dd>
+              <dt data-tr="mode1-dt-2">内容要素</dt>
+              <dd data-tr="mode1-dd-2">需包含网页端 / 客户端实操画面；素材、音乐、音效的使用效果演示；以供稿人视角展示素材上传流程与收益路径。</dd>
+              <dt data-tr="mode1-dt-3">原创与授权</dt>
+              <dd data-tr="mode1-dd-3">视频须为达人原创，严禁搬运、拼接他人成片；视频中使用的素材、音乐、音效，须为正版授权资源或光厂站内资源。</dd>
+              <dt data-tr="mode1-dt-4">审核与交付</dt>
+              <dd data-tr="mode1-dd-4">发布前提交终版内容，经品牌方审核确认后方可上线；发布后交付原片文件，并授予品牌方二次传播使用权，配合评论区维护及数据回传。</dd>
+            </dl>
+          <h4 data-tr="label-cases" style="font-size: 12px;">参考案例</h4><div class="case" style="position: relative;"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-dirA-1"><a href="https://www.douyin.com/user/MS4wLjABAAAAtZ-_yJSG6raZe0lJQlbCTig_cnJRZXfDEoDBo66TrXtCkd_GY44OdReeydgQnrDN?from_tab_name=main&amp;modal_id=7621081519288831247" target="_blank" rel="noopener" style="position: relative;">我们不生成视频，我们只是视频的搬运工。</a></span></div><div class="case" style="position: relative;"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-dirA-3"><a href="https://www.douyin.com/user/MS4wLjABAAAAg5jmcDh2ZxpF3kF5RPvGHEKQGqFVjbBH_BWQPSljwZ6OZNNcE4ssBqg7J35CpSyr?from_tab_name=main&amp;modal_id=7451551314087038245" target="_blank" rel="noopener" style="position: relative;">我把导演拍嘎了</a></span></div><div class="case" style="position: relative;"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-dirA-4"><a href="https://www.douyin.com/user/MS4wLjABAAAAIjQ8--z54mEMM93Y8HjFZQPhtCemfXiy3b5uuURnPOmxyRAC9MmssBhDotHIyU7K?from_tab_name=main&amp;modal_id=7398368283101072694" target="_blank" rel="noopener">一个晚上，一个人，一个奇迹</a></span></div></div>
+        </div>
+
+        <div class="mode-block">
+          <div class="mode-head">
+            <div class="k">MODE 02</div>
+            <h4 data-tr="mode3-title">视频中插（切片）</h4>
+            <p data-tr="mode3-for"><b>适合：</b>已有稳定主线内容的账号，不想改变原有内容结构时优先选择。</p>
+            
+          </div>
+          <div class="spec">
+            <h5 data-tr="mode3-h5">植入内容规格要求</h5>
+            <dl class="spec-list">
+              <dt data-tr="mode3-dt-1">数量与时长</dt>
+              <dd data-tr="mode3-dd-1">主线视频 1 条 + 中插广告 1 段；中插 ≥ 30s，插入位置在主线中段（约视频 1/3 至 2/3 处）；主线时长按达人日常内容习惯即可。</dd>
+              <dt data-tr="mode3-dt-2">内容要素</dt>
+              <dd data-tr="mode3-dd-2">集中演示平台功能（如 AI 搜索、关键词搜索）与素材 / 配乐优势，核心卖点不少于 2-3 个。</dd>
+              <dt data-tr="mode3-dt-3">原创与授权</dt>
+              <dd data-tr="mode3-dd-3">中插段须为达人原创拍摄与制作，不得直接搬运品牌方素材或他人广告成片；使用的素材、音乐、音效须为正版授权或光厂站内内容。</dd>
+              <dt data-tr="mode3-dt-4">审核与交付</dt>
+              <dd data-tr="mode3-dd-4">需提供主线脚本大纲、中插段脚本与完整视频，经品牌方确认后方可发布；发布后提供原始视频文件并授权品牌方二次传播，配合评论区维护与数据回传。</dd>
+            </dl>
+          <h4 data-tr="label-cases" style="font-size: 12px;">参考案例</h4>
+          <div class="case" style=""><span class="plat bili" data-tr="plat-bilibili" style="">B站</span><span class="txt" data-tr="case-clip-1" style=""><a href="https://www.bilibili.com/video/BV1u84y1H7a3/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">做UP主两年！这是我私藏的所有视频剪辑素材网站！</a></span></div></div>
+        </div>
+
+        <div class="mode-block">
+          <div class="mode-head">
+            <div class="k">MODE 03</div>
+            <h4 data-tr="mode2-title">图文合作</h4>
+            <p data-tr="mode2-for"><b>适合：</b>图文表达力强的账号，如小红书图文博主、剪辑师、摄影师、新媒体运营。</p>
+            
+          </div>
+          <div class="spec">
+            <h5 data-tr="mode2-h5" style="">图文内容规格要求</h5>
+            <dl class="spec-list" style="">
+              <dt data-tr="mode2-dt-1">数量与篇幅</dt>
+              <dd data-tr="mode2-dd-1">图片 ≥ 6 张（含首图 + 内页），正文 ≥ 600 字。</dd>
+              <dt data-tr="mode2-dt-2">内容要素</dt>
+              <dd data-tr="mode2-dd-2">光厂界面截图清晰，引用素材需标注对应素材编号。</dd>
+              <dt data-tr="mode2-dt-3">原创与授权</dt>
+              <dd data-tr="mode2-dd-3">图文须为达人原创截图 / 原创内容，禁止搬运他人图文；所用截图、素材需为自有或已取得授权。</dd>
+              <dt data-tr="mode2-dt-4">审核与交付</dt>
+              <dd data-tr="mode2-dd-4">正式发布前提交封面图、图片排版方案及文案初稿，经品牌方审核确认后方可上线；发布后交付原图文件，并授予品牌方二次使用权限。</dd>
+            </dl>
+          <h4 data-tr="label-cases" style="font-size: 12px;">参考案例</h4>
+          <div class="case" style=""><span class="plat xhs" data-tr="plat-xhs">小红书</span><span class="txt" data-tr="case-img-1"><a href="https://www.xiaohongshu.com/discovery/item/6ae4994f000000001100fdfd?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=AB0wufP_qYjX5mQtjevFil6q2rWnWrBewjA0h7i1a6t0Y=&amp;xsec_source=pc_share" target="_blank" rel="noopener">创意视频｜用「逐帧拉片」把“感觉”翻译出来</a></span></div></div>
+        </div>
+
+        <div class="mode-block">
+          <div class="mode-head">
+            <div class="k">MODE 04</div>
+            <h4 data-tr="mode4-title">共创合作</h4>
+            <p data-tr="mode4-for"><b>适合：</b><span style="font-weight: 600; caret-color: rgb(15, 17, 21); color: rgb(15, 17, 21); font-family: quote-cjk-patch, Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; text-decoration-thickness: auto; text-decoration-style: solid;"><span class="" style="font-size: 13px; font-weight: normal;">以成片展示为主、内容具备素材橱窗属性、风格稳定，且愿意与品牌共同策划选题的创作者</span></span>。</p>
+            
+          </div>
+          <div class="spec">
+            <h5 data-tr="mode4-h5">共创内容规格要求</h5>
+            <dl class="spec-list">
+              <dt data-tr="mode4-dt-1">数量与形式</dt>
+              <dd data-tr="mode4-dd-1">共创视频内容 1 条，按双方确认的选题执行。</dd>
+              <dt data-tr="mode4-dt-2">内容要素</dt>
+              <dd data-tr="mode4-dd-2">使用光厂素材进行创作，充分展现光厂素材的丰富度与高质感，需具备一定的主题性和创意性，避免纯展示性的素材混剪。</dd>
+              <dt data-tr="mode4-dt-3">原创与授权</dt>
+              <dd data-tr="mode4-dd-3">内容须为达人原创，禁止搬运；所用素材、音乐须为正版授权或光厂站内内容。</dd>
+              <dt data-tr="mode4-dt-4">审核与交付</dt>
+              <dd data-tr="mode4-dd-4">发布前提交选题、脚本 / 文案与终版内容，经品牌方确认后方可发布；发布后交付原片文件，并授予品牌方二次传播使用权。</dd>
+            </dl>
+          <h4 data-tr="label-cases" style="font-size:12px;">参考案例</h4><div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-coop-1"><a href="https://v.douyin.com/GhnJ6NR337M/" target="_blank" rel="noopener">拜水都江堰，问道青城山！探寻成都被称为“天府之国”的答案。</a></span></div><div class="case"><span class="plat dy" data-tr="plat-douyin">抖音</span><span class="txt" data-tr="case-coop-2"><a href="https://v.douyin.com/qRIADmyeYi4/" target="_blank" rel="noopener">踏足他人的世界蓝图，开启一场追“光”之旅</a></span></div>
+          </div>
+        </div>
+
+      </div>
+      
+
+      <!-- 视频合作 -->
+      <p class="note" data-tr="s2-note">以上为匹配建议，具体形式、档期与权益以双方沟通及合同为准。</p><section id="video-coop"></section>
+
+    </section>
+
+    <!-- ============ 03 发布与竞品规则 ============ -->
+    <section id="rules">
+      <div class="sec-head">
+        <div class="sec-num">03</div>
+        <div>
+          <h2 data-tr="s3-title">发布与竞品规则</h2>
+          <p data-tr="s3-desc">发布信息、广告形式与竞品排他要求，三类合作形式统一适用；具体执行以沟通确认为准。</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th data-tr="s3-th-1">发布信息</th><td data-tr="s3-td-1">发布账号、账号链接、发布平台、发布时间</td></tr>
+            <tr><th data-tr="s3-th-2">广告形式 &amp; 推广业务</th><td data-tr="s3-td-2">具体以沟通为准</td></tr>
+            <tr><th data-tr="s3-th-3">竞品要求</th><td data-tr="s3-td-3"><strong>不出现国内竞品</strong></td></tr>
+            <tr><th data-tr="s3-th-4">主要竞品</th><td data-tr="s3-td-4">新片场、包图网、爱给网、潮点视频、4K 中国、图虫创意、8kraw、曲多多、淘声网、猴子音悦、觅知网、耳聆网等音视频素材交易类网站（品牌方可根据市场情况更新）</td></tr>
+            <tr><th data-tr="s3-th-5">排竞期</th><td data-tr="s3-td-5">内容发布前 <strong>3 个月</strong> 至发布后 <strong>3 个月</strong> 内，不得在抖音、小红书、B 站、视频号等渠道为国内竞品创作或发布任何形式的商业推广内容</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ 04 通用要求 ============ -->
+    <section id="general">
+      <div class="sec-head">
+        <div class="sec-num">04</div>
+        <div>
+          <h2 data-tr="s4-title">合作要求</h2>
+          <p data-tr="s4-desc">以下 7 条为视频、图文、切片三类合作共同适用的执行要求；各类合作的专属规格见对应章节。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <ol class="rules">
+          <li data-tr="s4-li-1">通过星图 / 花火 / 蒲公英下单接单，或签署达人推广合同。<span class="note">*以实际沟通为准</span></li>
+          <li data-tr="s4-li-2">达人需提供脚本大纲和样片审核。</li>
+          <li data-tr="s4-li-3">达人在合作视频发布及推广期间，有义务进行评论区维护。</li>
+          <li data-tr="s4-li-4">合作内容要求全平台分发。<span class="note">*以实际沟通为准</span></li>
+          <li data-tr="s4-li-5">达人需配合品牌方提供相应推广数据。</li>
+          <li data-tr="s4-li-6">内容发布后，达人需向甲方提供原始视频 / 图片文件，并授权甲方在社交媒体平台进行二次传播。</li>
+          <li data-tr="s4-li-7">视频、图文、切片合作需在发布后 7 天内回传推广数据（阅读 / 播放、互动、收藏），内容保留期不少于 1 年。</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 05 海外 brief ============ -->
+    <section id="overseas">
+      <div class="sec-head">
+        <div class="sec-num">05</div>
+        <div>
+          <h2 data-tr="s5-title">海外达人注意事项</h2>
+          <p data-tr="s5-desc">面向海外达人的补充要求，与主手册共同适用。</p>
+        </div>
+      </div>
+
+      <div class="appendix-grid">
+        <div class="card">
+          <h4 data-tr="s5-c1-title"><span class="idx">一</span>平台与视频要求</h4>
+          <ul class="clean" style="margin-bottom:0">
+            <li data-tr="s5-c1-1">必须出现：① 品牌名光厂；② 网站或素材下载使用过程的画面；③ 素材、音乐或音效的实际效果展示。</li>
+            <li data-tr="s5-c1-2"><b>画幅与语言：</b>口播语言不限，必须有中文字幕；东南亚市场建议双语字幕（中文＋印尼语 / 越南语 / 泰语）。</li>
+            <li data-tr="s5-c1-3"><b>交付物：</b>成片文件＋封面图＋文案，具体以合同为准。</li>
+            <li data-tr="s5-c1-4"><b>官网语言说明：</b>演示时可直接使用中文界面，可使用英文标注关键信息</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 data-tr="s5-c2-title"><span class="idx">二</span>内容方向</h4>
+          <ul class="clean" style="margin-bottom:0">
+            <li data-tr="s5-c2-1"><b>痛点解决型：</b>先立痛点、再给方案。示例：「客户要中国风，翻遍国外素材库都找不到」「在海外拍中国场景成本太高，用素材解决」。</li>
+            <li data-tr="s5-c2-2"><b>工作流植入型：</b>把光厂变成工作流中的一步，适合剪辑教学、调色、声音设计类账号。示例：「一条广告片从脚本到成片的完整工作流」「我用素材拼出一支中国新年广告」。</li>
+            <li data-tr="s5-c2-3"><b>成片验证型：</b>用光厂素材独立做出中国风成片，用结果证明可行性。示例：「只用素材库镜头，我做了一条 30 秒广告」「同样的脚本换一套素材，差别有多大」。</li>
+            <li data-tr="s5-c2-4"><b>平台对比型：</b>与国际主流素材平台横向对比，讲清差异化（中国题材、授权范围、授权形式）。示例：「素材网站合集推荐」「不同的素材库，差别究竟有多大」。</li>
+            <li data-tr="s5-c2-5"><b>本土题材创作型：</b>服务做中国题材的本地创作者。示例：「在美国剪一支关于中国的片子，素材从哪来」「我没去过中国，却剪出了一支中国旅行片」。</li>
+            <li data-tr="s5-c2-6"><b>AI＋实拍混合型：</b>讲 AI 生成与实拍素材的混合工作流，光厂提供真实底素材。示例：「AI 生成＋实拍素材，我的混合工作流」「怎么让 AI 片子看起来更真实」。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 data-tr="s5-c3-title"><span class="idx">三</span>可讲卖点</h4>
+          <ul class="clean" style="margin-bottom:0">
+            <li data-tr="s5-c3-1"><b>中国题材独家性：</b>中国本土场景、人文与节庆素材丰富，是国际平台很难替代的部分，适合需要「中国味」的项目。</li>
+            <li data-tr="s5-c3-2"><b>全球授权：</b>素材支持全球授权、可商用。</li>
+            <li data-tr="s5-c3-3"><b>一站式：</b>视频、音乐、图片、音效在同一站解决，减少到处找素材和排查版权的成本。</li>
+            <li data-tr="s5-c3-4"><b>检索效率：</b>支持关键词、素材编号检索；AI 搜索支持长句与口语化描述；可直接拖图找同款画面。</li>
+            <li data-tr="s5-c3-5"><b>成本：</b>相比本地实拍或定制拍摄，用素材完成中国题材镜头成本更低（不承诺具体节省比例）。</li>
+            <li data-tr="s5-c3-6"><b>原创者可投稿：</b>如达人有原创素材，可说明平台接受创作者投稿；分成与规则以官网为准。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 data-tr="s5-c4-title"><span class="idx">四</span>海外版权与合规（必读）</h4>
+          <ul class="clean" style="margin-bottom:0">
+            <li data-tr="s5-c4-1"><b>使用边界：</b>光厂素材仅可用于本条约定内容，不得转售、不得二次商用分发、不得提供给第三方使用。</li>
+            <li data-tr="s5-c4-2"><b>授权地域：</b>光厂素材支持全球授权。</li>
+            <li data-tr="s5-c4-3"><b>广告披露：</b>按发布地法规与平台规则标注付费合作——美国 FTC：<strong>#ad</strong> 或「Paid partnership with VJshi」；英国 ASA：<strong>#ad</strong>；欧盟：开启平台「付费合作」标签，并在首屏或描述写明 advertising；YouTube 勾选 Paid promotion，TikTok 开启 Branded content。</li>
+            <li data-tr="s5-c4-4"><b>文化与账号：</b>避开当地宗教、节日、政治敏感点，不使用刻板印象表达；账号近 3 个月无违规、擦边或争议言论；遵守各平台外链与引流规则。</li>
+            <li data-tr="s5-c4-5"><b>数据与隐私：</b>不得在视频或描述中出现授权价格，涉及相关画面注意打码；画面中出现他人邮箱、账号、订单等个人信息时必须打码（GDPR / CCPA）。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <strong data-tr="footer-title">光厂 达人合作手册　V3.0</strong><br>
+      <span data-tr="footer-p1">本手册用于达人合作沟通，具体约定以双方合同及书面沟通确认为准。</span><br>
+      <span data-tr="footer-p2">本版整理：章节顺序与规格结构统一，补全业务参考案例；品牌卖点、合作要求与合规口径未改变原意。</span>
+    </footer>
+
+  </main>
+</div>
+
+<a href="#" class="backtop show" id="backtop" aria-label="回到顶部">↑</a>
+
+<script>
+  // Tab 切换
+  document.querySelectorAll('.tab-bar').forEach(function (bar) {
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.tab-btn');
+      if (!btn) return;
+      var tabs = btn.closest('.tabs');
+      tabs.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      tabs.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var panel = tabs.querySelector('#' + btn.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // 阅读进度 + 回到顶部
+  var progress = document.getElementById('progress');
+  var backtop = document.getElementById('backtop');
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY;
+    progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    backtop.classList.toggle('show', y > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // 侧栏当前章节高亮
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (l) { l.classList.remove('active'); });
+        var i = targets.indexOf(en.target);
+        if (i > -1) links[i].classList.add('active');
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    targets.forEach(function (t) { if (t) io.observe(t); });
+  }
+</script>
+
+
+
+
+
+
+<script>
+(function () {
+  var I18N = { en: {
+    "brand-name": "Guangchang Creator Handbook 2026",
+    "nav-brand": "<span class=\"num\">01</span>Brand & Business Highlights",
+    "nav-formats": "<span class=\"num\">02</span>Cooperation Formats",
+    "nav-rules": "<span class=\"num\">03</span>Publishing & Competitor Rules",
+    "nav-general": "<span class=\"num\">04</span>Cooperation Requirements",
+    "nav-overseas": "<span class=\"num\">05</span>Notes for Overseas Creators",
+    "side-foot": "This handbook supports creator cooperation talks.<br>Final terms follow the signed contract and written confirmation.",
+    "hero-title": "Guangchang Creator Handbook 2026",
+    "hero-desc": "Guangchang, operated by Chengdu Guangchang Creative Technology Co., Ltd., is a <strong>licensed commercial footage marketplace</strong>. It offers over 40 million premium licensed assets across <strong>video, music, images and sound effects</strong>, with more than 50% market share. It is also a community for professionals in film, advertising and marketing.",
+    "s1-title": "Brand & Business Highlights",
+    "s1-th-brand": "Brand",
+    "s1-td-brand": "<strong>Guangchang</strong>",
+    "s1-th-site": "Website",
+    "s1-th-pos": "Positioning",
+    "s1-td-pos": "One-stop marketplace for licensed assets",
+    "s1-th-slogan": "Slogan",
+    "s1-td-slogan": "Make creativity more valuable. Make the world more vivid.",
+    "s1-th-lines": "Business lines",
+    "s1-td-lines": "Guangchang Video, Guangchang Music, Guangchang Images, Guangchang Jobs, Guangchang Studio, Guangchang Copyright Center",
+    "h3-video": "Guangchang Video",
+    "tab-buyers": "Buyers",
+    "tab-contributors": "Contributors",
+    "tab-musicians": "Musicians",
+    "h4-audience": "Who buys",
+    "h4-usecases": "Use cases",
+    "h4-highlights": "Highlights",
+    "v1-lead": "Ad agencies, film and video production companies, brand social teams, in-house content teams, media outlets and independent creators.",
+    "v1-use-1": "A project is due: ready-made templates and footage get it out fast",
+    "v1-use-2": "A shot is missing and weather or gear makes a reshoot impossible",
+    "v1-use-3": "The budget is tight and shooting in-house costs too much",
+    "v1-use-note": "Guangchang covers all three: lower cost, faster delivery.",
+    "v1-hl-search": "<b>Market-leading search</b> that finds the right footage fast and precisely, so creators spend less time searching and more time making.<ul class=\"sub\"><li><b>Keyword search:</b> enter a keyword or asset ID in the homepage search bar to jump straight to the clip you need.</li><li><b>AI search (Lightcone engine):</b> type a shot description or a full prompt. Plain and even abstract wording works, so you never break it into keywords. Results lead with stronger-looking shots and need less scrolling.</li><li><b>Visual search:</b> drag a reference screenshot or video into the image search box to find a similar look.</li></ul>",
+    "v1-hl-library": "<b>Large, varied, local and fresh</b> — download for different commercial uses and meet niche needs.<ul class=\"sub\"><li><b>Local:</b> most free overseas libraries lean toward Western scenes, which rarely fit Chinese projects.</li><li><b>Broad range:</b> live-action HD, AE / PR templates, C4D models and motion effects cover many commercial scenarios.</li><li><b>Fresh:</b> local-first content from 100,000+ contributors keeps time-sensitive projects on schedule.</li></ul>",
+    "v1-hl-license": "<b>Clear licensing:</b> personal, business and business plus licenses cover different project scenarios. One licensee gets worldwide, permanent rights, so multi-platform distribution carries no infringement risk.",
+    "v1-hl-years": "<b>14 years in business</b> as a veteran name in footage, with over <strong>50%</strong> market share and a strong reputation in the community.",
+    "label-buyer": "Reference cases · Buyer view",
+    "case-vb-1": "<a href=\"https://www.douyin.com/user/MS4wLjABAAAA4aWi4TCV-An99Jplq-Nzs9QmEFrbY38KpIP6RhZs2fk?from_tab_name=main&modal_id=7681491235584437094\" target=\"_blank\" rel=\"noopener\">3 tricks to make your vlog look expensive</a>",
+    "case-vb-3": "<a href=\"https://douyin.com/video/7497064922111642943\" target=\"_blank\" rel=\"noopener\">What do A-Roll and B-Roll mean in video?</a>",
+    "v2-hl-1": "Put idle general footage back to work and get the most value from every clip.<br><span class=\"note\">Note: promotion must state that all work is original. Re-uploading or reselling others' work is prohibited.</span>",
+    "v2-hl-2": "Upload and price your own work, full-time or part-time, on your own schedule — a solid side income for people in content creation.",
+    "v2-hl-3": "<strong>70%</strong> commission for exclusive contributors and <strong>60%</strong> for non-exclusive contributors, with fast payouts.",
+    "v2-hl-4": "Millions of visitors and plenty of buyers mean better exposure and conversion than peers. Strong work sells faster, and one clip can sell many times for steady passive income.",
+    "v2-hl-5": "Free copyright records and rights protection for exclusive contributors.",
+    "label-contributor": "Reference cases · Contributor view",
+    "case-vs-1": "<a href=\"https://bilibili.com/video/BV1EP411d7QZ\" target=\"_blank\" rel=\"noopener\">Step-by-step guide: this one thing earns me 200,000 a year</a>",
+    "case-vs-2": "<a href=\"https://v.douyin.com/i5g9CkJj/\" target=\"_blank\" rel=\"noopener\">\"May what you love keep shining, year after year\" #vlog #Guangchang</a>",
+    "h3-music": "Guangchang Music",
+    "m1-lead": "Ad agencies, film and video production companies, brand social teams, in-house content teams, media outlets and independent creators.",
+    "m1-use-1": "Finished client work needs licensed music",
+    "m1-use-2": "Multi-platform distribution without copyright worries",
+    "m1-use-3": "The budget is too tight for a custom composer",
+    "m1-use-note": "Filter fast on Guangchang Music, buy and use right away, and avoid copyright risk.",
+    "m1-hl-1": "Hundreds of thousands of licensed tracks across styles, covering promos, ads, theatrical film, variety shows, Vlogs, short video and live streams.",
+    "m1-hl-2": "Music comes from established licensors at home and abroad. Every purchase includes a license certificate, so rights are covered.",
+    "m1-hl-3": "Choose business or personal licensing by use case. After download, the license stays valid for that production, worldwide and permanently.",
+    "m1-hl-4": "Filter by mood, tempo, vocals and beat, plus keywords. Preview unlimited times before you buy.",
+    "case-mb-1": "<a href=\"https://v.douyin.com/FlBy4HEANJk/\" target=\"_blank\" rel=\"noopener\">Editor notes keep getting more valuable</a>",
+    "case-mb-2": "<a href=\"https://v.douyin.com/xUvnCKYCPPQ/\" target=\"_blank\" rel=\"noopener\">I traded one promo video for a hotpot dinner with my boss</a>",
+    "m2-hl-1": "Multiple revenue streams for original music. Musicians earn up to <strong>70%</strong> on shop sales, personal or business.",
+    "m2-hl-2": "Our established video business brings millions of high-intent visitors. Video features plus playlist commissions help tracks sell.",
+    "label-musician": "Reference cases · Musician view",
+    "case-ms-1": "<a href=\"https://bilibili.com/video/BV1jh411K7d8\" target=\"_blank\" rel=\"noopener\">[Industry talk] What a full-time musician learns after four years...</a>",
+    "h3-sfx": "Guangchang Sound Effects (free)",
+    "sfx-1": "A huge professional library covering games, traffic, voices, daily life and nature — an easy lift for texture and fun.",
+    "sfx-2": "Free downloads every day; new accounts get 5 per day.",
+    "sfx-3": "Custom collections let you build your own sound library.",
+    "sfx-4": "Hover to preview — no clicking track by track.",
+    "sfx-5": "<b>For contributors:</b> user uploads are not supported yet.",
+    "sfx-6": "<b>Promotion:</b> sound effects are not promoted on their own; pair them with Guangchang Music.",
+    "plat-douyin": "Douyin",
+    "plat-bilibili": "Bilibili",
+    "plat-xhs": "RED",
+    "s2-title": "Cooperation Formats",
+    "s2-desc": "Video, graphic posts and mid-roll clips — pick the format that fits your account and content style.",
+    "mode1-title": "Custom video",
+    "mode1-for": "<b>Best for:</b> accounts with strong on-camera or voice-over skills and real demos — post-production, photography, tech, editing tutorials.",
+    "mode1-h5": "Video specs",
+    "mode1-dt-1": "Quantity",
+    "mode1-dd-1": "1 original video",
+    "mode1-dt-2": "Content",
+    "mode1-dd-2": "Show the web or desktop app in use; demo footage, music and sound effects; walk through upload and earnings from a contributor's view.",
+    "mode1-dt-3": "Originality & licensing",
+    "mode1-dd-3": "The video must be your own work. Do not re-upload or splice other people's videos. All footage, music and sound effects must be licensed or from Guangchang.",
+    "mode1-dt-4": "Review & delivery",
+    "mode1-dd-4": "Submit the final cut before publishing and go live only after brand approval. After publishing, deliver the master file and grant the brand secondary distribution rights. Support comment moderation and data reporting.",
+    "mode3-title": "Mid-roll clip",
+    "mode3-for": "<b>Best for:</b> accounts with an established main format that want to keep their structure unchanged.",
+    "mode3-h5": "Placement specs",
+    "mode3-dt-1": "Quantity & length",
+    "mode3-dd-1": "1 main video + 1 mid-roll ad. Mid-roll ≥ 30s, placed in the middle of the main video (about 1/3 to 2/3 through). Main video length follows your usual format.",
+    "mode3-dt-2": "Content",
+    "mode3-dd-2": "Demo platform features (AI search, keyword search) and footage / music strengths. Cover at least 2-3 key selling points.",
+    "mode3-dt-3": "Originality & licensing",
+    "mode3-dd-3": "The mid-roll must be shot and produced by you. Do not reuse brand footage or other advertisers' videos. Footage, music and sound effects must be licensed or from Guangchang.",
+    "mode3-dt-4": "Review & delivery",
+    "mode3-dd-4": "Provide the main script outline, mid-roll script and full video, and publish after brand approval. Then deliver the original file, grant secondary distribution rights, and support comment moderation and data reporting.",
+    "mode2-title": "Graphic post",
+    "mode2-for": "<b>Best for:</b> accounts strong in graphic storytelling — RED post creators, editors, photographers, social media managers.",
+    "mode2-h5": "Post specs",
+    "mode2-dt-1": "Quantity & length",
+    "mode2-dd-1": "At least 6 images (cover + inner pages); body copy at least 600 characters.",
+    "mode2-dt-2": "Content",
+    "mode2-dd-2": "Screenshots of Guangchang must be clear. Cite the asset ID for any footage referenced.",
+    "mode2-dt-3": "Originality & licensing",
+    "mode2-dd-3": "Use your own screenshots and copy. Do not reuse other people's posts. Screenshots and footage must be yours or licensed.",
+    "mode2-dt-4": "Review & delivery",
+    "mode2-dd-4": "Submit the cover, layout plan and draft copy before publishing and go live after brand approval. Then deliver the original image files and grant secondary usage rights.",
+    "mode4-title": "Co-creation",
+    "mode4-for": "<b>Best for:</b> creators with a consistent style who are open to planning topics together with the brand.",
+    "mode4-h5": "Co-creation specs",
+    "mode4-dt-1": "Quantity & format",
+    "mode4-dd-1": "One co-created piece in any format (video or graphic post), following an agreed topic.",
+    "mode4-dt-2": "Content",
+    "mode4-dd-2": "Build around the agreed topic and key messages, show real Guangchang use cases, and keep brand information accurate.",
+    "mode4-dt-3": "Originality & licensing",
+    "mode4-dd-3": "Must be original work. Footage and music must be licensed or sourced from Guangchang.",
+    "mode4-dt-4": "Review & delivery",
+    "mode4-dd-4": "Submit the topic, script or copy, and the final piece before publishing; go live after brand approval. Then deliver the original files and grant secondary usage rights.",
+    "s2-note": "These are matching suggestions; final format, schedule and rights follow discussion and contract.",
+    "step-angle": "Then choose a content angle",
+    "lead-angle": "Angles are for reference only. Common requirements: a genuine persona, hands-on demos and accurate brand messaging.",
+    "dirA-title": "A　First-hand experience",
+    "dirA-em": "Contributor / buyer POV",
+    "dirA-p": "Speak from the real persona of a Guangchang contributor or buyer. Show what your audience needs from a first-person view, then demo how Guangchang solves those pain points from different angles. Keep it credible, clear and accurate about the brand.",
+    "dirA-li-1": "<b>Contributor view:</b> how a travel photographer turns a hobby into income (demo uploading a client project's footage to Guangchang)",
+    "dirA-li-2": "<b>Buyer view:</b> licensed footage sites editors actually use (demo downloading footage from Guangchang and cutting a finished video to show the result)",
+    "label-cases": "Reference cases",
+    "case-clip-1": "<a href=\"https://www.bilibili.com/video/BV1u84y1H7a3/?share_source=copy_web&vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7\" target=\"_blank\" rel=\"noopener\">Two years as a creator: all the footage sites I secretly use</a>",
+    "case-img-1": "<a href=\"https://www.xiaohongshu.com/discovery/item/6ae4994f000000001100fdfd?source=webshare&xhsshare=pc_web&xsec_token=AB0wufP_qYjX5mQtjevFil6q2rWnWrBewjA0h7i1a6t0Y=&xsec_source=pc_share\" target=\"_blank\" rel=\"noopener\">Creative video | Translating a feeling, frame by frame</a>",
+    "case-coop-1": "<a href=\"https://v.douyin.com/GhnJ6NR337M/\" target=\"_blank\" rel=\"noopener\">Dujiangyan and Qingcheng Mountain: the answer behind Chengdu, Land of Abundance</a>",
+    "case-coop-2": "<a href=\"https://v.douyin.com/qRIADmyeYi4/\" target=\"_blank\" rel=\"noopener\">Step into another world and chase the light</a>",
+    "case-dirA-1": "<a href=\"https://www.douyin.com/user/MS4wLjABAAAAtZ-_yJSG6raZe0lJQlbCTig_cnJRZXfDEoDBo66TrXtCkd_GY44OdReeydgQnrDN?from_tab_name=main&modal_id=7621081519288831247\" target=\"_blank\" rel=\"noopener\">We don't make videos; we just move them around.</a>",
+    "case-dirA-2": "<a href=\"https://www.douyin.com/user/MS4wLjABAAAA7EsTTTVeSt8LM2zQfSGuUo4k2a3bdtwsLpoPf3uT6f7TrTs2L6WX3Xgz3PPY6swZ?from_tab_name=main&modal_id=7462670051372436773\" target=\"_blank\" rel=\"noopener\">Step into another world and chase the light</a>",
+    "plat-douyin": "Douyin",
+    "case-dirA-3": "<a href=\"https://www.douyin.com/user/MS4wLjABAAAAg5jmcDh2ZxpF3kF5RPvGHEKQGqFVjbBH_BWQPSljwZ6OZNNcE4ssBqg7J35CpSyr?from_tab_name=main&modal_id=7451551314087038245\" target=\"_blank\" rel=\"noopener\">I 'shot' the director</a>",
+    "case-dirA-4": "<a href=\"https://www.douyin.com/user/MS4wLjABAAAAIjQ8--z54mEMM93Y8HjFZQPhtCemfXiy3b5uuURnPOmxyRAC9MmssBhDotHIyU7K?from_tab_name=main&modal_id=7398368283101072694\" target=\"_blank\" rel=\"noopener\">One night. One person. One miracle.</a>",
+    "dirB-title": "B　Side-by-side review",
+    "dirB-em": "Tech creator persona",
+    "dirB-p": "Take on the voice of a tech creator. Use hands-on tests and demos to show how Guangchang works and what makes it stand out. Keep the tone forward-looking and data-driven, the logic clear, and the brand facts accurate.",
+    "dirB-li-1": "<b>Video business:</b> compare classic search with AI search in practice, show the technical edge of Guangchang AI search, and explain the foundation behind it — AI search is only as good as the library beneath it.",
+    "case-dirB-1": "<a href=\"https://www.xiaohongshu.com/discovery/item/6ae4994f000000001100fdfd?source=webshare&xhsshare=pc_web&xsec_token=AB0wufP_qYjX5mQtjevFil6q2rWnWrBewjA0h7i1a6t0Y=&xsec_source=pc_share\" target=\"_blank\" rel=\"noopener\">Creative video | Translating a feeling, frame by frame</a>",
+    "dirC-title": "C　Roundup with placement",
+    "dirC-em": "Expert opinion + side-by-side review",
+    "dirC-p": "Share an expert view on footage, music and freelance marketplaces (market analysis or another angle that shows your expertise), and explain what matters when choosing a platform, tied to product strengths. Review leading international platforms (not domestic competitors), weigh pros and cons, and give the featured site (Guangchang) more screen time and detail. Keep the logic clear and the brand facts accurate.",
+    "case-dirC-1": "<a href=\"https://www.bilibili.com/video/BV1u84y1H7a3\" target=\"_blank\" rel=\"noopener\">Two years as a creator! Every footage site I keep to myself</a>",
+    "case-dirC-2": "<a href=\"https://www.douyin.com/user/MS4wLjABAAAAo-ditI50Xl7i3YQYE-voCGq-Ye8STNwPpkr2WmfkgKw?from_tab_name=main&modal_id=7683361050338626831\" target=\"_blank\" rel=\"noopener\">Dujiangyan and Qingcheng Mountain: the answer behind Chengdu, Land of Abundance</a>",
+    "s3-title": "Publishing & Competitor Rules",
+    "s3-desc": "Publishing details, ad format and competitor exclusivity apply to all three formats. Execution follows confirmed discussion.",
+    "s3-th-1": "Publishing details",
+    "s3-td-1": "Account, account link, platform, publish time",
+    "s3-th-2": "Ad format & promoted business",
+    "s3-td-2": "To be confirmed in discussion",
+    "s3-th-3": "Competitor requirement",
+    "s3-td-3": "<strong>No domestic competitors</strong>",
+    "s3-th-4": "Main competitors",
+    "s3-td-4": "Xinpianchang, Baotu, Aigei, Chaodian Video, 4K China, Tuchong Creative, 8kraw, Quduoduo, Taosheng, Houzi Music, Mizhi, Erling and other footage and music marketplaces (the brand may update this list)",
+    "s3-th-5": "Exclusivity window",
+    "s3-td-5": "From <strong>3 months</strong> before publishing to <strong>3 months</strong> after, do not create or post any commercial promotion for domestic competitors on Douyin, RED, Bilibili, Channels or other platforms",
+    "s4-title": "Cooperation Requirements",
+    "s4-desc": "These 7 requirements apply to video, graphic post and mid-roll projects. Format-specific specs are in each chapter.",
+    "s4-li-1": "Book through Xingtu / Huahuo / Pugongying, or sign a creator promotion contract.<span class=\"note\">*Subject to discussion</span>",
+    "s4-li-2": "Provide a script outline and sample cut for review.",
+    "s4-li-3": "Moderate comments during publishing and promotion.",
+    "s4-li-4": "Distribute on all platforms.<span class=\"note\">*Subject to discussion</span>",
+    "s4-li-5": "Share the requested promotion data with the brand.",
+    "s4-li-6": "After publishing, provide the original video / image files and grant the brand secondary distribution rights on social platforms.",
+    "s4-li-7": "Report promotion data (views / plays, engagement, saves) within 7 days of publishing. Keep content online for at least 1 year.",
+    "s5-title": "Notes for Overseas Creators",
+    "s5-desc": "Additional requirements for overseas creators; they apply alongside the main handbook.",
+    "s5-c1-title": "<span class=\"idx\">1</span>Platform & video requirements",
+    "s5-c1-1": "Must include: ① the brand name Guangchang; ② on-screen use of the site or asset downloads; ③ real demos of footage, music or sound effects.",
+    "s5-c1-2": "<b>Format & language:</b> any spoken language, but Chinese subtitles are required. For Southeast Asia, bilingual subtitles (Chinese + Indonesian / Vietnamese / Thai) are recommended.",
+    "s5-c1-3": "<b>Deliverables:</b> final video + cover image + copy, per contract.",
+    "s5-c1-4": "<b>Site language:</b> the Chinese interface is fine for demos; label key points in English if helpful.",
+    "s5-c2-title": "<span class=\"idx\">2</span>Content angles",
+    "s5-c2-1": "<b>Pain and fix:</b> state the problem, then the solution. Example: \"My client wants a Chinese look and I cannot find it in overseas libraries.\" \"Shooting Chinese scenes abroad costs too much — use footage instead.\"",
+    "s5-c2-2": "<b>Workflow:</b> make Guangchang one step in the workflow — good for editing tutorials, color grading and sound design. Example: \"A full workflow from script to final ad.\" \"I cut a Chinese New Year ad from stock footage.\"",
+    "s5-c2-3": "<b>Proof by output:</b> build a Chinese-style video entirely from Guangchang footage and let the result prove it works. Example: \"I made a 30-second ad with library shots only.\" \"Same script, different footage — how big is the gap?\"",
+    "s5-c2-4": "<b>Platform comparison:</b> compare with major international stock platforms and explain the difference (Chinese subject matter, licensing scope, license types). Example: \"Best stock sites, ranked.\" \"Different libraries — how different are they really?\"",
+    "s5-c2-5": "<b>Local stories:</b> serve local creators working on Chinese subjects. Example: \"Cutting a film about China from the US — where do the shots come from?\" \"I have never been to China, but I cut a China travel film.\"",
+    "s5-c2-6": "<b>AI + live action:</b> show a hybrid workflow where Guangchang supplies real base footage. Example: \"AI generation + live-action footage: my hybrid workflow.\" \"How to make AI footage look real.\"",
+    "s5-c3-title": "<span class=\"idx\">3</span>Talking points",
+    "s5-c3-1": "<b>Unique Chinese material:</b> rich local scenes, people and festivals that international platforms cannot easily replace — ideal for projects that need a Chinese feel.",
+    "s5-c3-2": "<b>Global licensing:</b> assets are licensed worldwide and cleared for commercial use.",
+    "s5-c3-3": "<b>One-stop:</b> video, music, images and sound effects in one place — less time hunting for assets and checking rights.",
+    "s5-c3-4": "<b>Search speed:</b> search by keyword or asset ID; AI search handles long, conversational prompts; drag in an image to find a similar look.",
+    "s5-c3-5": "<b>Cost:</b> cheaper than local or custom shoots for Chinese shots (no specific savings promised).",
+    "s5-c3-6": "<b>Open to creators:</b> if you have original footage, you can submit it; revenue share and rules follow the official site.",
+    "s5-c4-title": "<span class=\"idx\">4</span>Overseas licensing & compliance (required)",
+    "s5-c4-1": "<b>Usage scope:</b> Guangchang assets are for this project only. Do not resell, redistribute commercially or share with third parties.",
+    "s5-c4-2": "<b>Territory:</b> assets are licensed worldwide.",
+    "s5-c4-3": "<b>Ad disclosure:</b> follow local law and platform rules for paid partnerships — US FTC: <strong>#ad</strong> or \"Paid partnership with VJshi\"; UK ASA: <strong>#ad</strong>; EU: turn on the platform's paid partnership label and state \"advertising\" on the first screen or in the description; YouTube: tick Paid promotion; TikTok: turn on Branded content.",
+    "s5-c4-4": "<b>Culture and account:</b> avoid local religious, holiday and political sensitivities; no stereotypes. No violations, borderline content or controversy in the past 3 months. Follow each platform's link and traffic rules.",
+    "s5-c4-5": "<b>Data and privacy:</b> never show licensing prices in the video or description; blur any on-screen price. Blur personal data such as emails, account names and orders (GDPR / CCPA).",
+    "footer-title": "Guangchang Creator Cooperation Handbook V3.0",
+    "footer-p1": "This handbook is for creator cooperation discussions. Final terms follow the signed contract and written confirmation.",
+    "footer-p2": "This version: unified chapter order and spec structure, added business reference cases. Brand highlights, cooperation requirements and compliance wording keep their original intent."
+  } };
+
+  var STORE_KEY = 'gc-handbook-lang';
+  function readSaved() { try { return localStorage.getItem(STORE_KEY); } catch (e) { return null; } }
+  function writeSaved(v) { try { localStorage.setItem(STORE_KEY, v); } catch (e) {} }
+
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-tr]'));
+  nodes.forEach(function (el) { if (el.__zh === undefined) el.__zh = el.innerHTML; });
+
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.lang-switch button'));
+  var TITLE_ZH = '光厂 · 达人合作手册（视频 / 图文 / 切片）V3.0';
+  var TITLE_EN = 'Guangchang · Creator Cooperation Handbook (Video / Graphic / Mid-roll) V3.0';
+
+  function apply(lang) {
+    var en = lang === 'en';
+    nodes.forEach(function (el) {
+      var key = el.getAttribute('data-tr');
+      if (en) {
+        if (Object.prototype.hasOwnProperty.call(I18N.en, key)) el.innerHTML = I18N.en[key];
+      } else {
+        el.innerHTML = el.__zh;
+      }
+    });
+    document.documentElement.lang = en ? 'en' : 'zh-CN';
+    document.title = en ? TITLE_EN : TITLE_ZH;
+    btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+    writeSaved(lang);
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+  });
+
+  var saved = readSaved();
+  if (saved === 'en' || saved === 'zh') apply(saved);
+})();
+</script>
+
+
+</body></html>
