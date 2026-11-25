@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026光厂达人推广合作brief</title>
+<style>
+  :root{
+    --bg:#F6F8FB;
+    --sidebar:#FAFBFE;
+    --surface:#FFFFFF;
+    --ink:#27313F;
+    --ink-2:#4A5668;
+    --muted:#7B8798;
+    --line:#E2E7ED;
+    --line-soft:#EEF1F6;
+    --accent:#526E9B;
+    --accent-ink:#44608C;
+    --accent-soft:#EAF0F8;
+    --teal:#5F8A90;
+    --teal-ink:#456F75;
+    --teal-soft:#E9F2F3;
+    --pink:#B67898;
+    --pink-ink:#8E5A78;
+    --pink-soft:#F8EEF4;
+    --sand:#F8EEF4;
+    --sand-ink:#8E5A78;
+    --radius:14px;
+    --max:900px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    font-size:15.5px;
+    line-height:1.82;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--accent-ink);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  p{margin:0 0 14px}
+  p:last-child{margin-bottom:0}
+
+  /* ---------- 阅读进度 ---------- */
+  #progress{
+    position:fixed;top:0;left:0;height:2px;width:0;
+    background:var(--accent);z-index:60;transition:width .1s linear;
+  }
+
+  /* ---------- 布局 ---------- */
+  .layout{display:flex;align-items:flex-start}
+
+  /* ---------- 侧边导航 ---------- */
+  .sidebar{
+    position:sticky;top:0;flex:0 0 274px;width:274px;height:100vh;
+    background:var(--sidebar);border-right:1px solid var(--line);
+    padding:30px 20px 28px;overflow-y:auto;
+  }
+  .brand{display:flex;gap:12px;align-items:center;padding:0 6px 22px;border-bottom:1px solid var(--line-soft)}
+  .brand-mark{
+    width:38px;height:38px;flex:0 0 38px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark img{display:block;width:auto;height:auto;max-width:38px;max-height:38px}
+  .brand-name{font-size:14.5px;font-weight:700;line-height:1.4}
+  .brand-sub{font-size:10px;color:var(--muted);letter-spacing:.1em;margin-top:3px}
+  .nav-group{
+    font-size:10.5px;letter-spacing:.16em;color:var(--muted);
+    margin:26px 8px 8px;font-weight:600;
+  }
+  .nav-link{
+    display:block;padding:7px 10px;border-radius:7px;font-size:13.5px;color:var(--ink-2);
+    border-left:2px solid transparent;line-height:1.5;
+  }
+  .nav-link:hover{background:#EEF2F8;text-decoration:none;color:var(--ink)}
+  .nav-link.active{background:var(--accent-soft);color:var(--accent-ink);font-weight:600;border-left-color:var(--accent)}
+  .nav-link.sub{padding-left:22px;font-size:13px;color:var(--muted)}
+  .sidebar-foot{
+    margin-top:28px;padding:14px 10px 0;border-top:1px solid var(--line-soft);
+    font-size:11.5px;color:var(--muted);line-height:1.7;
+  }
+
+  /* ---------- 语言切换 ---------- */
+  .lang-switch{
+    display:inline-flex;align-items:center;gap:1px;margin:10px 0 2px 6px;
+    background:#F1F4F9;border:1px solid var(--line);border-radius:20px;padding:2px;
+  }
+  .lang-switch button{
+    border:0;background:transparent;font:inherit;font-size:11px;line-height:1.4;
+    color:var(--muted);padding:3px 9px;border-radius:20px;cursor:pointer;
+  }
+  .lang-switch button.active{
+    background:#fff;color:var(--accent-ink);font-weight:600;
+    box-shadow:0 1px 2px rgba(39,49,63,.07);
+  }
+  .lang-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .lang-divider{font-size:10px;color:#C2CBD9;line-height:1}
+  html[lang="en"] details summary::after{content:"Show"}
+  html[lang="en"] details[open] summary::after{content:"Hide"}
+
+  /* ---------- 主体 ---------- */
+  main{flex:1;min-width:0;padding:44px 56px 100px}
+  .content{max-width:var(--max);margin:0 auto}
+
+  /* ---------- 封面 ---------- */
+  .hero{
+    background:linear-gradient(158deg,#FFFFFF 0%,#F1F5FB 100%);
+    border:1px solid var(--line);border-radius:20px;
+    padding:42px 44px 36px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-90px;width:260px;height:260px;
+    border-radius:50%;background:radial-gradient(circle,#DDE7F4 0%,rgba(221,231,244,0) 70%);
+  }
+  .kicker{
+    font-size:10.5px;letter-spacing:.22em;color:var(--muted);
+    font-weight:600;margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.3;margin:0 0 14px;letter-spacing:.01em;font-weight:700;
+  }
+  .lede{font-size:15px;color:var(--ink-2);max-width:640px;margin-bottom:22px}
+  .meta-row{
+    display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12.5px;color:var(--muted);
+    padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:26px;
+  }
+  .meta-row span{display:inline-flex;align-items:center;gap:6px}
+  .meta-row b{color:var(--ink-2);font-weight:600}
+
+  .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:16px;margin-bottom:28px}
+  .biz-card{
+    position:relative;display:flex;flex-direction:column;justify-content:space-between;
+    min-height:142px;padding:20px 22px 18px;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);color:var(--ink);text-decoration:none;
+    transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease;
+  }
+  .biz-no{position:absolute;top:16px;right:20px;font-size:11px;letter-spacing:.08em;color:#C2CBD9}
+  .biz-name{font-size:16.5px;font-weight:600;line-height:1.5;padding-right:28px}
+  .biz-sub{margin-top:5px;font-size:12.5px;color:var(--muted);line-height:1.6}
+  .biz-go{margin-top:18px;display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:var(--accent-ink)}
+  .biz-go .arrow{transition:transform .18s ease;display:inline-block}
+  .biz-card:hover{border-color:#B9C8DC;background:#FBFCFE;box-shadow:0 6px 18px rgba(38,58,92,.07);transform:translateY(-1px)}
+  .biz-card:hover .biz-go{color:var(--accent)}
+  .biz-card:hover .arrow{transform:translate(2px,-2px)}
+  .biz-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* ---------- 速览 ---------- */
+  .section-label{
+    font-size:11px;letter-spacing:.16em;color:var(--muted);font-weight:600;
+    margin:0 0 12px;
+  }
+  .glance{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .glance-card{
+    display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:18px 18px 16px;color:var(--ink);transition:border-color .18s,transform .18s;
+  }
+  .glance-card:hover{border-color:#BCCBE0;text-decoration:none;transform:translateY(-1px)}
+  .gc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .gc-index{font-size:10.5px;color:var(--muted);letter-spacing:.1em}
+  .gc-tag{
+    font-size:10.5px;color:var(--teal-ink);background:var(--teal-soft);
+    padding:2px 8px;border-radius:20px;letter-spacing:.04em;
+  }
+  .glance-card h3{font-size:15.5px;margin:0 0 8px;font-weight:700}
+  .gc-dirs{font-size:12.5px;color:var(--ink-2);line-height:1.65;margin:0 0 10px}
+  .gc-deliver{
+    font-size:12px;color:var(--muted);margin:0;padding-top:10px;
+    border-top:1px dashed var(--line);
+  }
+  .gc-deliver b{color:var(--ink-2);font-weight:600}
+
+  .quicknav{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .quicknav a{
+    font-size:12.5px;color:var(--ink-2);background:#fff;border:1px solid var(--line);
+    padding:6px 12px;border-radius:20px;
+  }
+  .quicknav a:hover{background:var(--accent-soft);border-color:#C6D5E8;color:var(--accent-ink);text-decoration:none}
+
+  /* ---------- 章节 ---------- */
+  section{margin-top:66px;scroll-margin-top:28px}
+  .sec-head{padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .sec-num{font-size:11px;letter-spacing:.14em;color:var(--accent);font-weight:700}
+  .sec-head h2{font-size:25px;margin:6px 0 8px;font-weight:700;letter-spacing:.01em;line-height:1.4}
+  .sec-desc{font-size:13.5px;color:var(--muted);margin:0;max-width:680px}
+
+  h3{font-size:17.5px;margin:34px 0 14px;font-weight:700;line-height:1.5;scroll-margin-top:28px}
+  h4{font-size:14.5px;margin:26px 0 10px;font-weight:700;color:var(--ink-2)}
+  h3:first-child,h4:first-child{margin-top:0}
+
+  /* ---------- 卡片 ---------- */
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 30px;
+  }
+  .card + .card{margin-top:16px}
+  .card-tight{padding:22px 26px}
+  .card-title{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .card-title h3,.card-title h4{margin:0}
+  .pill{
+    font-size:10.5px;letter-spacing:.05em;color:var(--teal-ink);background:var(--teal-soft);
+    padding:2px 9px;border-radius:20px;white-space:nowrap;font-weight:600;
+  }
+
+  /* ---------- 表格 ---------- */
+  .tbl{width:100%;border-collapse:collapse;font-size:14px;line-height:1.72}
+  .tbl th{
+    text-align:left;font-size:12px;letter-spacing:.05em;color:var(--ink-2);
+    font-weight:700;background:#F7F9FC;padding:11px 14px;
+    border-bottom:1px solid var(--line);vertical-align:top;
+  }
+  .tbl td{padding:13px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--ink-2)}
+  .tbl tr:last-child th,.tbl tr:last-child td{border-bottom:none}
+  .tbl .key{width:120px;color:var(--ink);font-weight:600;background:#FAFBFD}
+  .tbl-3 .key{width:86px}
+  .tbl-3 th:first-child{width:86px}
+  .tbl-narrow td:first-child{width:130px;color:var(--ink);font-weight:600;background:#FAFBFD}
+
+  /* ---------- 列表 ---------- */
+  ul,ol{margin:0 0 14px;padding-left:22px}
+  li{margin:7px 0}
+  li:last-child{margin-bottom:0}
+  .num-list{counter-reset:none;padding-left:22px}
+  .num-list > li{margin:12px 0}
+  .num-list > li::marker{color:var(--accent);font-weight:700}
+  .sub-list{padding-left:20px;margin:8px 0 4px}
+  .sub-list li{margin:6px 0;color:var(--ink-2)}
+  .clean-list{list-style:none;padding-left:0}
+  .clean-list li{position:relative;padding-left:18px;margin:10px 0}
+  .clean-list li::before{
+    content:"";position:absolute;left:2px;top:.72em;width:5px;height:5px;
+    border-radius:50%;background:var(--teal);
+  }
+
+  /* ---------- 说明块 ---------- */
+  .note{
+    background:#F5FAFA;border-left:3px solid var(--teal);border-radius:0 8px 8px 0;
+    padding:14px 18px;font-size:13.5px;color:var(--ink-2);margin:16px 0;
+  }
+  .note p:last-child{margin-bottom:0}
+  .note strong{color:var(--ink)}
+  .note-warn{background:var(--sand);border-left-color:#D9B7C9}
+  .note-warn strong{color:var(--sand-ink)}
+
+  /* ---------- 高亮 ---------- */
+  .num{font-weight:700;color:var(--accent-ink)}
+  .limit{
+    background:var(--sand);color:var(--sand-ink);border-radius:4px;
+    padding:1px 5px;font-weight:600;white-space:nowrap;
+  }
+  .quote-tag{
+    font-size:11.5px;color:var(--muted);border:1px solid var(--line);
+    border-radius:4px;padding:0 5px;white-space:nowrap;
+  }
+
+  /* ---------- 方向卡 ---------- */
+  .direction{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    margin-top:16px;overflow:hidden;
+  }
+  .dir-head{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:20px 26px;border-bottom:1px solid var(--line-soft);background:#FCFDFF;
+  }
+  .dir-badge{
+    flex:0 0 28px;width:28px;height:28px;border-radius:8px;
+    background:var(--accent-soft);color:var(--accent-ink);
+    font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .dir-head h3{font-size:16.5px;margin:0 0 4px}
+  .dir-sub{font-size:12px;color:var(--muted);margin:0;letter-spacing:.02em}
+  .dir-body{padding:22px 26px 24px}
+  .dir-body > .label:first-child{margin-top:0}
+
+  .label{
+    font-size:10.5px;letter-spacing:.16em;color:var(--muted);
+    font-weight:700;margin:22px 0 8px;
+  }
+  .dir-body .label{margin-top:0}
+  .dir-body .label ~ .label{margin-top:22px}
+
+  /* ---------- 折叠 ---------- */
+  details{
+    border:1px solid var(--line);border-radius:10px;background:#FBFCFF;margin-top:16px;
+  }
+  details summary{
+    cursor:pointer;padding:12px 16px;font-size:13.5px;font-weight:600;color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    list-style:none;user-select:none;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{
+    content:"展开";font-size:11px;color:var(--muted);font-weight:500;
+    border:1px solid var(--line);border-radius:4px;padding:1px 7px;white-space:nowrap;
+  }
+  details[open] summary::after{content:"收起"}
+  details summary:focus-visible{outline:2px solid #B9C8DC;outline-offset:2px;border-radius:10px}
+  .details-body{padding:6px 18px 18px;border-top:1px dashed var(--line);font-size:13.5px}
+  .feature-details{margin-top:12px}
+  .feature-details .details-body{padding:4px 18px 14px}
+  .feature-item{padding:12px 0}
+  .feature-item + .feature-item{border-top:1px dashed var(--line-soft)}
+  .feature-item:last-child{padding-bottom:4px}
+  .feature-item h5{font-size:13.5px;margin:0 0 5px;color:var(--ink);font-weight:700;line-height:1.6}
+  .feature-item p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.8}
+
+  /* ---------- 案例 ---------- */
+  .case-list{list-style:none;padding:0;margin:0}
+  .case-list li{
+    padding:10px 0;border-bottom:1px dashed var(--line-soft);margin:0;
+  }
+  .case-list li:last-child{border-bottom:none;padding-bottom:0}
+  .case-title{display:block;font-size:13.5px;color:var(--ink);font-weight:600;line-height:1.65;margin-bottom:2px}
+  .case-title a{color:var(--accent-ink)}
+  .case-title a:hover{border-bottom:1px solid #D3DFEF}
+  .case-src{font-size:12px;color:var(--muted);word-break:break-all}
+  .case-src a{color:var(--accent-ink);border-bottom:1px solid #D3DFEF}
+  .case-src .dom{
+    font-size:10.5px;background:#EEF2F8;color:var(--ink-2);border-radius:3px;
+    padding:0 5px;margin-right:6px;
+  }
+
+  /* ---------- 规格 ---------- */
+  .spec-list{display:grid;gap:10px;margin-top:6px}
+  .spec{
+    display:grid;grid-template-columns:26px 1fr;gap:12px;
+    background:#FBFCFE;border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;
+  }
+  .spec-n{
+    width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);
+    font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:3px;
+  }
+  .spec b{color:var(--ink);font-weight:700}
+  .spec p{margin:0;font-size:13.8px;color:var(--ink-2)}
+
+  /* ---------- 通用要求 ---------- */
+  .req-list{display:grid;gap:10px;margin:0}
+  .req{
+    display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;
+    background:#fff;border:1px solid var(--line);border-radius:11px;padding:16px 20px;
+  }
+  .req-n{
+    font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em;
+    border-right:1px solid var(--line-soft);padding-right:10px;line-height:1.9;
+  }
+  .req p{margin:0;font-size:14px;color:var(--ink-2)}
+  .req p b{color:var(--ink)}
+
+  /* ---------- 待确认 ---------- */
+  .tbd-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .tbd-list li{
+    display:grid;grid-template-columns:26px 1fr;gap:12px;
+    background:#fff;border:1px solid var(--line);border-left:3px solid #D9B7C9;
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:0;
+  }
+  .tbd-list .q{
+    font-size:11px;font-weight:700;color:var(--sand-ink);background:var(--sand);
+    width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:3px;
+  }
+  .tbd-list p{margin:0;font-size:13.8px;color:var(--ink-2)}
+  .tbd-list b{color:var(--ink)}
+
+  /* ---------- 附录 ---------- */
+  .appendix .card{padding:22px 26px}
+  .appendix h3{font-size:16px;margin:30px 0 12px}
+  .appendix h3:first-of-type{margin-top:0}
+  .appendix .tbl{font-size:13.5px}
+  .appendix .tbl td:first-child{width:132px;color:var(--ink);font-weight:600;background:#FAFBFD}
+
+  /* ---------- 页脚 ---------- */
+  .page-foot{
+    margin-top:70px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--muted);text-align:center;line-height:1.9;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1180px){
+    main{padding:36px 32px 80px}
+  }
+  @media (max-width:860px){
+    .biz-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .biz-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:980px){
+    .layout{display:block}
+    .sidebar{
+      position:static;width:100%;height:auto;flex:none;
+      border-right:none;border-bottom:1px solid var(--line);padding:20px 20px 16px;
+    }
+    .brand{padding-bottom:14px}
+    .sidebar nav{display:grid;grid-template-columns:repeat(2,1fr);gap:0 12px}
+    .nav-group{grid-column:1/-1}
+    .sidebar-foot{display:none}
+    main{padding:26px 20px 64px}
+    .hero{padding:30px 24px 26px;border-radius:16px}
+    .hero h1{font-size:27px}
+    .glance{grid-template-columns:1fr}
+    .card{padding:22px 20px}
+    .dir-head,.dir-body{padding-left:18px;padding-right:18px}
+    .tbl{font-size:13px}
+    .spec,.req,.tbd-list li{padding:12px 14px}
+  }
+
+  /* ---------- 打印 ---------- */
+  @media print{
+    #progress,.sidebar{display:none}
+    main{padding:0}
+    body{background:#fff;font-size:11pt}
+    .card,.direction,details{break-inside:avoid}
+    details{border:none}
+    details[open] summary::after,details summary::after{display:none}
+  }
+
+  /* ---------- 首屏介绍区背景（柔和雾化） ---------- */
+  .hero::after{display:none}
+  .hero-intro{
+    margin:-42px -44px 0;
+    padding:42px 44px 0;
+    border-radius:20px 20px 0 0;
+    background-color:#FAFBFF;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"),
+      radial-gradient(44% 66% at 0% -2%, rgba(236,176,226,.62) 0%, rgba(236,176,226,0) 66%),
+      radial-gradient(52% 62% at 36% 4%, rgba(203,193,246,.50) 0%, rgba(203,193,246,0) 68%),
+      radial-gradient(58% 78% at 102% 30%, rgba(178,226,251,.68) 0%, rgba(178,226,251,0) 70%),
+      radial-gradient(44% 58% at 8% 104%, rgba(196,212,249,.44) 0%, rgba(196,212,249,0) 66%),
+      linear-gradient(180deg,#FFFFFF 0%,#FBFCFE 55%,#F8FAFD 100%);
+    background-repeat:repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;
+    background-size:140px 140px,auto,auto,auto,auto,auto;
+    background-position:0 0,0 0,0 0,100% 0,0 100%,0 0;
+  }
+
+  /* ---------- 合作形式：模式切换 ---------- */
+  .mode-switch{margin-top:0}
+  .mode-label{margin-top:44px}
+  .mode-card{font:inherit;text-align:left;cursor:pointer;appearance:none;color:inherit;position:relative}
+  .mode-card:hover{transform:none}
+  .mode-card.mc-video{background:#F4F7FE;border-color:#DCE6F7}
+  .mode-card.mc-image{background:#F3FAF9;border-color:#D8ECE9}
+  .mode-card.mc-clip{background:#FDF4F8;border-color:#F1DEE9}
+  .mode-card.mc-video:hover{border-color:#BCCFE9}
+  .mode-card.mc-image:hover{border-color:#B7DDD8}
+  .mode-card.mc-clip:hover{border-color:#E8C7D8}
+  .mode-card.mc-video.is-active{background:#EDF3FD;border-color:var(--accent)}
+  .mode-card.mc-image.is-active{background:#EAF6F5;border-color:var(--teal)}
+  .mode-card.mc-clip.is-active{background:#FBEBF3;border-color:var(--pink)}
+  .gc-state{
+    display:none;align-items:center;font-size:10.5px;font-weight:600;color:#fff;
+    background:var(--accent);padding:2px 8px;border-radius:999px;letter-spacing:.02em;
+  }
+  .mc-image .gc-state{background:var(--teal)}
+  .mc-clip .gc-state{background:var(--pink)}
+  .mode-card.is-active .gc-state{display:inline-flex}
+  .mode-card.is-active .gc-tag{display:none}
+  .mode-card .gc-action{
+    margin-top:auto;padding-top:10px;font-size:12px;font-weight:600;
+    color:var(--accent-ink);display:inline-flex;align-items:center;gap:4px;
+  }
+  .mc-image .gc-action{color:var(--teal-ink)}
+  .mc-clip .gc-action{color:var(--pink-ink)}
+  .mode-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .coop-detail{
+    margin-top:18px;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);padding:0 24px 24px;
+  }
+  .cd-head{
+    display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+    margin:0 -24px;padding:16px 24px 0;border-bottom:1px solid var(--line);
+  }
+  .cd-title{font-size:19px;font-weight:700;color:var(--ink);padding-bottom:13px;letter-spacing:-.01em}
+  .cd-links{display:flex;gap:22px;flex-wrap:wrap}
+  .cd-links a{
+    font-size:13.5px;color:var(--muted);padding:4px 0 13px;
+    border-bottom:2px solid transparent;margin-bottom:-1px;
+  }
+  .cd-links a:hover{color:var(--accent-ink);text-decoration:none;border-color:var(--accent-soft)}
+  .cd-links a.active{color:var(--accent-ink);border-color:var(--accent)}
+  .coop-panel{margin-top:0;padding-top:18px;animation:modeFade .18s ease}
+  .coop-panel .sec-head{margin-bottom:18px}
+  .coop-panel .sec-head .sec-num,.coop-panel .sec-head h2{display:none}
+  .coop-panel[hidden]{display:none}
+  .coop-panel .direction,.coop-panel details,.coop-panel h3{scroll-margin-top:28px}
+  @keyframes modeFade{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion: reduce){.coop-panel{animation:none}}
+
+  .cd-close{
+    margin-left:auto;font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);
+    background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer;
+  }
+  .cd-close:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .coop-detail{opacity:1;transition:opacity .14s ease}
+  .coop-detail.is-hiding{opacity:0}
+  .coop-detail:not([hidden]){animation:detailIn .18s ease}
+  @keyframes detailIn{from{opacity:0}to{opacity:1}}
+
+  /* 详情内：轻量化方向标题 */
+  .coop-panel .direction{background:transparent;border:0;border-radius:0;margin:0 0 26px;overflow:visible}
+  .coop-panel .dir-head{display:inline-flex;align-items:stretch;gap:0;padding:0;margin:0 0 7px;background:transparent;border:0}
+  .coop-panel .dir-badge{
+    flex:none;width:auto;height:auto;border-radius:7px 0 0 7px;background:var(--accent);
+    color:#fff;font-size:11.5px;font-weight:700;padding:3px 9px;margin:0;display:flex;align-items:center;
+  }
+  .coop-panel .dir-head h3{
+    font-size:13.5px;line-height:1.55;margin:0;padding:3px 12px 3px 10px;color:#fff;
+    background:var(--accent);border-left:1px solid rgba(255,255,255,.35);border-radius:0 7px 7px 0;
+  }
+  #image-coop .dir-badge,#image-coop .dir-head h3{background:var(--teal)}
+  #clip-coop .dir-badge,#clip-coop .dir-head h3{background:var(--pink)}
+  .coop-panel .dir-sub{font-size:12px;color:var(--muted);margin:0 0 12px;letter-spacing:.02em}
+  .coop-panel .dir-body{padding:0}
+  .coop-panel .dir-body .label{margin-top:14px}
+  .coop-panel .dir-body > .label:first-child{margin-top:0}
+  .coop-panel details{margin-top:14px}
+  .coop-panel .spec-list{margin-top:8px}
+  .mode-switch{scroll-margin-top:24px}
+  /* ================= 统一色彩：标题层级 + 表格 ================= */
+  /* 大标题 / 章节编号 */
+  main .hero h1{color:#243B66}
+  main .kicker{color:#2E4E8F}
+  main .sec-num{
+    display:inline-block;background:#2E4E8F;color:#fff;
+    padding:2px 9px;border-radius:999px;letter-spacing:.12em;
+  }
+  main .sec-head{border-bottom-color:#DCE5F2}
+  main .sec-head h2{color:#243B66}
+  main .section-label{color:#2E4E8F}
+
+  /* 业务标题 */
+  main .biz-name{color:#2C4E8F}
+  main .biz-no{color:#9FB2CE}
+  main .biz-go{color:#3C5CA8}
+
+  /* 合作类型卡标题：按类型分色 */
+  .mode-card.mc-video h3{color:#2C4E8F}
+  .mode-card.mc-image h3{color:#1F7A7A}
+  .mode-card.mc-clip h3{color:#B0507C}
+  .mode-card.mc-video .gc-index{color:#6F87B3}
+  .mode-card.mc-image .gc-index{color:#5F9999}
+  .mode-card.mc-clip .gc-index{color:#B77E99}
+
+  /* 章节内标题 */
+  main h3{color:#243B66}
+  main h4{color:#46618C}
+  main .card-title h3{color:#2C4E8F}
+  main .card-title h4{color:#46618C}
+
+  /* 方向标签：蓝 / 青 / 粉 */
+  .coop-panel .dir-badge{background:#2E4E8F}
+  .coop-panel .dir-head h3{background:#2E4E8F;color:#fff;white-space:normal;overflow-wrap:anywhere}
+  #image-coop .dir-badge,#image-coop .dir-head h3{background:#1F7A7A}
+  #clip-coop .dir-badge,#clip-coop .dir-head h3{background:#B0507C}
+  .coop-panel .dir-head{max-width:100%}
+  .coop-panel .dir-sub{color:#6E7F96}
+
+  /* 辅助小标题 */
+  main .label{color:#7C8FA8}
+  #video-coop .label{color:#5872A8}
+  #image-coop .label{color:#37797A}
+  #clip-coop .label{color:#A05C7C}
+
+  /* 详情头部 */
+  .cd-title{color:#243B66}
+  .cd-links a.active{color:#2E4E8F;border-color:#2E4E8F}
+
+  /* ================= 表格统一 ================= */
+  main .tbl th{background:#DEEAFA;color:#1F3B70;border-bottom:2px solid #2E4E8F}
+  main .tbl td{background:#fff;border-bottom:1px solid #EDF1F6}
+  main .tbl .key,
+  main .tbl tr td:first-child,
+  main .tbl-narrow td:first-child{
+    background:#F4F8FE;color:#243B66;
+    box-shadow:inset 3px 0 0 #C6D6EB;
+  }
+  main .tbl td b,main .tbl th b{color:#B0507C;font-weight:700}
+  main .tbl tr:hover td{background:#FBFCFE}
+
+
+  /* ================= 表格边界与标题区统一（正式版已合并） ================= */
+  main .tbl{border-collapse:collapse;background:#FFFFFF}
+  main .tbl th{
+    background:#C6DBF4;color:#16345F;
+    border:1px solid #D9E4F1;
+  }
+  main .tbl td{
+    background:#FFFFFF;
+    border:1px solid #D9E4F1;
+  }
+  /* 外框：统一 1px，与内部线共用，不叠加 */
+  main .tbl{outline:1px solid #B9CBE2;outline-offset:-1px}
+  /* 左侧行标题 */
+  main .tbl .key,
+  main .tbl tr td:first-child,
+  main .tbl-narrow td:first-child{
+    background:#E8F1FC;color:#1D3A66;
+    box-shadow:none;
+  }
+
+  /* 官网文字链接：保持原有字体、字号、颜色与位置 */
+  .meta-row a{color:inherit;text-decoration:none}
+  .meta-row a:hover{text-decoration:underline;text-underline-offset:3px}
+  .meta-row a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+  /* 业务卡页内跳转：目标标题保留顶部留白 */
+  #video-highlights,#music-highlights{scroll-margin-top:32px}
+  /* ---------- 业务角色切换：受众画像 + 需求场景 ---------- */
+  h3.biz-title-h{font-size:23px;line-height:1.45;letter-spacing:0;display:flex;align-items:center;gap:10px}
+  .biz-title-h .biz-ico{display:inline-flex;width:34px;height:34px;border-radius:10px;
+    align-items:center;justify-content:center;flex:0 0 34px}
+  .biz-ico svg{width:19px;height:19px;display:block}
+  .biz-ico.ico-video{background:#E9F1FB;color:#2E4E8F}
+  .biz-ico.ico-music{background:#E7F4F4;color:#1F7A7A}
+  .biz-roles{margin:8px 0 36px}
+  .br-tabs{display:flex;gap:32px;border-bottom:1px solid #EAEEF4;margin-bottom:24px}
+  .br-tab{position:relative;display:inline-flex;align-items:center;gap:7px;border:0;background:none;
+    font:inherit;font-size:16.5px;color:#8B96A6;padding:4px 0 12px;cursor:pointer;transition:color .16s ease}
+  .br-tab .br-tab-ico svg{width:18px;height:18px;display:block}
+  .br-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;border-radius:2px;
+    background:transparent;transition:background-color .16s ease}
+  .br-tab:hover{color:#5A6576}
+  .br-tab.is-active{font-weight:700}
+  .br-tab[data-role="buyer"].is-active{color:#2E4E8F}
+  .br-tab[data-role="contributor"].is-active{color:#B0406E}
+  .br-tab[data-role="buyer"].is-active::after{background:#2E4E8F}
+  .br-tab[data-role="contributor"].is-active::after{background:#B0406E}
+  .br-tab:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:4px}
+  .br-panel{animation:brFade .17s ease}
+  .br-panel[hidden]{display:none}
+  @keyframes brFade{from{opacity:0}to{opacity:1}}
+  .br-cols{display:grid;grid-template-columns:minmax(0,40fr) minmax(0,60fr)}
+  .br-col{min-width:0;padding:2px 0}
+  .br-col.br-aud{padding-right:28px}
+  .br-col.br-need{border-left:1px solid #EDF1F6;padding-left:28px}
+  .br-h{font-size:16px;font-weight:700;color:#37445A;margin:0 0 12px;letter-spacing:.01em}
+  .br-p{font-size:15.5px;line-height:1.7;color:#4A5668;margin:0}
+  .br-list{list-style:none;margin:0;padding:0}
+  .br-list li{position:relative;padding:0 0 12px 16px;font-size:15.5px;line-height:1.7;color:#4A5668}
+  .br-list li:last-child{padding-bottom:0}
+  .br-list li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%}
+  .br-list li b{color:#27313F;font-weight:700}
+  .br-slash{color:#C3CBD8;margin:0 6px}
+  .br-list li::before{background:#2E4E8F}
+  [data-biz="music"] .br-list li::before{background:#1F7A7A}
+  .br-panel[id$="-contributor"] .br-list li::before{background:#B0406E}
+  .br-note{font-size:14px;line-height:1.7;color:#6B7688;margin:14px 0 0}
+  .br-more{display:inline-flex;align-items:center;gap:5px;border:0;background:none;font:inherit;
+    font-size:14px;color:#2A5FA8;padding:10px 0 2px;margin:10px 0 0;cursor:pointer}
+  .br-more:hover{text-decoration:underline;text-underline-offset:3px}
+  .br-more:focus-visible{outline:2px solid #2A5FA8;outline-offset:3px;border-radius:4px}
+  .br-caret{display:inline-block;line-height:1;transition:transform .17s ease;font-size:13px}
+  .br-more[aria-expanded="true"] .br-caret{transform:rotate(180deg)}
+  .br-detail{border-top:1px dashed #E4E9F1;margin-top:12px;padding-top:12px;animation:brFade .17s ease}
+  .br-detail[hidden]{display:none}
+  .br-dp{font-size:14.5px;line-height:1.75;color:#5B6678;margin:0 0 6px}
+  .br-dp:last-child{margin-bottom:0}
+  @media (max-width:700px){
+    .br-cols{grid-template-columns:1fr}
+    .br-col.br-aud{padding-right:0;padding-bottom:20px}
+    .br-col.br-need{border-left:0;border-top:1px solid #EDF1F6;padding-left:0;padding-top:20px}
+    .br-tabs{gap:24px}
+    h3.biz-title-h{font-size:21px}
+    h3.biz-title-h .biz-ico{width:30px;height:30px;flex-basis:30px;border-radius:9px}
+  }
+</style>
+</head>
+<body>
+<div id="progress" style="width: 59.8744%;"></div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><img src="data:image/png;base64,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" alt="光厂 Logo" data-en-alt="VJshi logo"></div>
+      <div>
+        <div class="brand-name" data-en="VJshi Creator Handbook">光厂 · 达人合作手册</div>
+        
+      </div>
+    </div>
+
+    <div class="lang-switch" role="group" aria-label="语言 / Language">
+      <button type="button" data-set-lang="zh" class="active" aria-pressed="true">中文</button>
+      <span class="lang-divider">/</span>
+      <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    </div>
+
+    <nav>
+      <div class="nav-group" data-en="Overview">概览</div>
+      <a class="nav-link" href="#top" data-en="Home">手册首页</a>
+
+      <div class="nav-group" data-en="Brand &amp; Business">品牌与业务</div>
+      <a class="nav-link" href="#brand" data-en="01　Brand &amp; Business">01　品牌与业务</a>
+      <a class="nav-link sub" href="#video-biz" data-en="VJshi Video">光厂视频</a>
+      <a class="nav-link sub" href="#music-biz" data-en="VJshi Music">光厂音乐</a>
+      <a class="nav-link sub" href="#sfx-biz" data-en="VJshi Sound Effects">光厂音效</a>
+      <a class="nav-link active" href="#rules" data-en="02　Publishing &amp; Competitor Rules">02　发布与竞品规则</a>
+
+      <div class="nav-group" data-en="Collaboration Formats">合作形式</div>
+      <a class="nav-link" href="#formats" data-en="03　Collaboration Formats">03　合作形式</a>
+      <a class="nav-link sub" href="#video-coop" data-en="Video Collaboration">视频合作</a>
+      <a class="nav-link sub" href="#image-coop" data-en="Image-Text Collaboration">图文合作</a>
+      <a class="nav-link sub" href="#clip-coop" data-en="Clip (Mid-Roll) Collaboration">切片（中插）合作</a>
+
+      <div class="nav-group" data-en="General Terms">通用条款</div>
+      <a class="nav-link" href="#general" data-en="04　General Collaboration Requirements">04　通用合作要求</a>
+
+      <div class="nav-group" data-en="Appendix">附录</div>
+      <a class="nav-link" href="#overseas" data-en="Overseas Creator Brief Notes">海外达人 brief 注意事项</a>
+    </nav>
+
+    <div class="sidebar-foot" data-en-html="Version V3.0　·　2026.11&lt;br&gt;Source: VJshi creator collaboration brief (video / image-text / clip)">
+      版本 V3.0　·　2026.11<br>
+      内容依据：光厂达人合作 brief（视频 / 图文 / 切片）
+    </div>
+  </aside>
+
+  <main>
+    <div class="content">
+
+      <!-- ================= 封面 ================= -->
+      <header class="hero" id="top">
+        <div class="hero-intro">
+        <h1>光厂 · 达人合作手册</h1>
+        <p class="lede">
+          一站式正版音视频素材交易网站。手册覆盖视频（定制）植入、图文种草测评、切片 / 中插植入三种合作模式，内含品牌介绍、业务说明、内容方向、参考案例及内容规格要求。
+        </p>
+        <div class="meta-row">
+          <span>官网 <b><a href="https://www.vjshi.com/" target="_blank" rel="noopener noreferrer">vjshi.com</a></b></span>
+          <span>适用形式 <b>视频 / 图文 / 切片</b></span>
+          <span>版本 <b>V3.0</b></span>
+          <span>更新 <b>2026.11</b></span>
+        </div>
+        </div>
+
+        <p class="section-label">业务推广范围</p>
+        <div class="biz-grid">
+          <a class="biz-card" href="#video-highlights">
+            <span class="biz-no">01</span>
+            <div>
+              <div class="biz-name">光厂视频</div>
+              <p class="biz-sub">正版视频素材</p>
+            </div>
+            <span class="biz-go">查看卖点明细</span>
+          </a>
+          <a class="biz-card" href="#music-highlights">
+            <span class="biz-no">02</span>
+            <div>
+              <div class="biz-name">光厂音乐</div>
+              <p class="biz-sub">版权音乐平台</p>
+            </div>
+            <span class="biz-go">查看卖点明细</span>
+          </a>
+          <a class="biz-card" href="https://www.vjshi.com/cases" target="_blank" rel="noopener noreferrer">
+            <span class="biz-no">03</span>
+            <div>
+              <div class="biz-name">光厂案例</div>
+              <p class="biz-sub">成片与项目案例</p>
+            </div>
+            <span class="biz-go">访问官网 <span class="arrow">↗</span></span>
+          </a>
+        </div>
+
+        <nav class="quicknav" aria-label="快速导航">
+          <a href="#brand">品牌与业务</a>
+          <a href="#rules">发布与竞品规则</a>
+          <a href="#video-coop">视频合作</a>
+          <a href="#image-coop">图文合作</a>
+          <a href="#clip-coop">切片合作</a>
+          <a href="#general">通用要求</a>
+        </nav>
+      </header>
+
+      <!-- ================= 01 品牌与业务 ================= -->
+      <section id="brand">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 01</span>
+          <h2>品牌与业务</h2>
+          <p class="sec-desc">光厂为品牌方、广告公司、影视公司、企业、媒体与内容创作者提供视频、音乐、音效的一站式正版素材交易服务。</p>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><h3 style="font-size:15px">品牌档案</h3><span class="pill">品牌介绍</span></div>
+          <table class="tbl tbl-narrow">
+            <tbody>
+              <tr><td>品牌名称</td><td>光厂</td></tr>
+              <tr><td>官方网站</td><td><a href="https://www.vjshi.com" target="_blank" rel="noopener">https://www.vjshi.com</a></td></tr>
+              <tr><td>品牌定位</td><td>一站式正版素材交易网站</td></tr>
+              <tr><td>品牌 Slogan</td><td>让创意更有价值，让世界更生动</td></tr>
+              <tr><td>品牌附件</td><td><a href="../vjshi-brand-intro.pdf" target="_blank" rel="noopener">光厂品牌介绍通案.pdf</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="video-biz" class="biz-title-h"><span class="biz-ico ico-video" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.6"/><path d="M16 10.4l4.2-2.2v7.6L16 13.6z"/></svg></span>光厂视频</h3>
+      <section class="biz-roles" data-biz="video">
+      <div class="br-tabs" role="tablist" aria-label="光厂视频">
+        <button type="button" class="br-tab is-active" role="tab" id="video-tab-buyer" aria-selected="true" aria-controls="video-panel-buyer" data-role="buyer">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>买方客户</span>
+        </button>
+        <button type="button" class="br-tab" role="tab" id="video-tab-contributor" aria-selected="false" aria-controls="video-panel-contributor" data-role="contributor">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>供稿人</span>
+        </button>
+      </div>
+        <div class="br-panel is-active" id="video-panel-buyer" role="tabpanel" aria-labelledby="video-tab-buyer">
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">受众画像</h5>
+              <p class="br-p">品牌方、广告公司、影视公司、企业、媒体、自媒体博主等</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">需求场景</h5>
+              <ul class="br-list">
+              <li><b>项目赶工</b><span class="br-slash">/</span>需要现成模板或素材快速出片</li>
+              <li><b>素材漏拍</b><span class="br-slash">/</span>天气、设备等各种原因无法补充</li>
+              <li><b>预算有限</b><span class="br-slash">/</span>自己实拍成本过高</li>
+              </ul>
+          <p class="br-note">以上场景都可通过光厂实现降本增效。</p>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="video-panel-buyer-detail" data-more="查看具体场景" data-less="收起说明">
+                <span class="br-more-label">查看具体场景</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="video-panel-buyer-detail" hidden>
+<p class="br-dp">项目赶工需要套模版、素材漏拍无法补拍、预算有限且自己实拍成本过高，都可以通过光厂实现“降本增效”。</p>
+          </div>
+        </div>
+        <div class="br-panel" id="video-panel-contributor" role="tabpanel" aria-labelledby="video-tab-contributor" hidden>
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">受众画像</h5>
+              <p class="br-p">摄影师、剪辑师、特效师、后期包装、导演、制片、原创短视频博主等内容创作者</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">需求场景</h5>
+              <ul class="br-list">
+              <li><b>闲置素材</b><span class="br-slash">/</span>项目里拍过、但没进成片的通用素材，可上传销售</li>
+              <li><b>旅拍风光</b><span class="br-slash">/</span>采集的城市、自然风光素材，可整理上传，多一条变现途径</li>
+              <li><b>剪辑模板</b><span class="br-slash">/</span>影视后期做出好用的剪辑模板，也可上传销售</li>
+              </ul>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="video-panel-contributor-detail" data-more="查看具体场景" data-less="收起说明">
+                <span class="br-more-label">查看具体场景</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="video-panel-contributor-detail" hidden>
+<p class="br-dp">1、摄影师在项目过程中拍摄但没有用到成片中的通用素材，可以上传到光厂进行销售；</p>
+            <p class="br-dp">2、旅行博主在旅拍过程中采集的城市、自然风光等素材，可以整理好上传到光厂销售，多一条变现途径；</p>
+            <p class="br-dp">3、影视后期在项目过程中产出了一个好的剪辑模板，也可以上传到光厂销售。</p>
+          </div>
+        </div>
+      </section>
+
+        <div class="card">
+<h4 id="video-highlights">业务亮点 · 买方侧</h4>
+          <ol class="num-list">
+            <li>
+              <b>行业领先的搜索算法</b>，创作者能快速、精准检索到自己所需的素材，省时省力，提升内容制作效率。
+              <ul class="sub-list">
+                <li><b>【关键词搜索】</b>：在首页搜索框输入关键词或素材编号，就能快速定位目标素材。</li>
+                <li>
+                  <b>【AI 搜索（光锥引擎）】</b>：支持分镜描述、提示词整句输入，口语化的抽象描述也能识别，不用自己拆关键词；结果会优先给出审美水准较高的画面，减少反复筛选。                </li>
+                <li><b>【画面搜索】</b>：用户可以直接把参考截图或视频拖进图像搜索框，按画面找相似素材</li>
+              </ul>
+            </li>
+            <li>
+              <b>海量、丰富、本土化、更新快的视频素材</b>，可根据不同商用场景下载使用，满足不同客户的个性化需求。
+              <ul class="sub-list">
+                <li><b>【本土化】</b>：很多免费外国素材网站主要以欧美场景为主，不太适合国内客户的需求</li>
+                <li><b>【素材类型广泛】</b>：覆盖高清实拍、AE/PR 模板、C4D 模型、动画特效，满足多种商业场景的素材需求。</li>
+                <li><b>【更新快】</b>：光厂以本土场景为主，且有&nbsp;<span class="num">超 10 万个人供稿人，</span>更新快，赶时效的项目也能跟上。</li>
+              </ul>
+            </li>
+            <li>授权范围清晰，三种授权方式，个人授权、企业授权和企业plus授权，可以根据项目的使用场景选择不同的授权范围，非常的灵活，同一个授权主体全球永久授权，多平台分发也不用担心侵权风险。</li>
+            <li><b>成立十四年</b>，老字号的视频素材交易网站，市场占有率高达 <span class="num">60%</span>，在圈层中拥有良好口碑值得信赖</li>
+          </ol>
+
+          <h4>业务亮点 · 供稿人侧</h4>
+          <ol class="num-list">
+            <li>创作者闲置通用素材再利用，实现素材价值最大化
+              <div class="note note-warn"><strong>注：</strong>相关推广需强调必须是原创作品，严禁搬运和盗卖</div>
+            </li>
+            <li>用户自主上传，自主定价，可全职可兼职，创作时间自由，更适合内容创作行业人员的副业方式</li>
+            <li>独家供稿人 <span class="num">70%</span> 的销售提成，非独家供稿人 <span class="num">60%</span> 的销售提成，提现速度快</li>
+            <li>百万级流量，买家多，使光厂供稿人作品拥有优于同行业的曝光及转化率，优质作品能以更快的速度售出，同一素材可多次销售，提高创作者睡后收入</li>
+            <li>光厂为独家供稿人提供免费版权存证和维权服务，保障创作者权益</li>
+          </ol>
+
+          <details>
+            <summary>业务信息参考 · 买方 / 供稿人案例（6 条）</summary>
+            <div class="details-body">
+              <p class="label" style="margin-top:14px">买方视角</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">【一条视频广告费=奶茶店打工2个月！ 学生党自媒体收获分享～】</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://www.douyin.com/video/7488181310607920425" target="_blank" rel="noopener">douyin.com/video/7488181310607920425</a></span>
+                </li>
+                <li>
+                  <span class="case-title">废片也能变大片？Vlog开头这样剪‼️ 出去玩拍了...</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://v.douyin.com/MjM8EJcYVXU/" target="_blank" rel="noopener">v.douyin.com/MjM8EJcYVXU/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">【做视频的A-Roll和B-Roll是什么意思？】</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://www.douyin.com/video/7497064922111642943" target="_blank" rel="noopener">douyin.com/video/7497064922111642943</a></span>
+                </li>
+              </ul>
+              <p class="label" style="margin-top:22px">供稿人视角</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">【保姆级攻略，就这一项，我一年多挣20万，你也可以的！】</span>
+                  <span class="case-src"><span class="dom">B站</span><a href="https://www.bilibili.com/video/BV1EP411d7QZ/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1EP411d7QZ</a></span>
+                </li>
+                <li>
+                  <span class="case-title">“希望你的热爱是能够细水长流持续发光的源泉” #vlog #碎碎念 #光厂 #视频素材 @光厂VJshi</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://v.douyin.com/i5g9CkJj/" target="_blank" rel="noopener">v.douyin.com/i5g9CkJj/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">【每一次追光，都是青春最炽热的回忆】</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://www.douyin.com/user/MS4wLjABAAAAozLRDd0vng2-gaLbqsXCEdRKAojk9wLYjS7qKM2PeW6MB2kzNcyMwX7O77TFoUX4?from_tab_name=main&amp;modal_id=7512713257124252982" target="_blank" rel="noopener">douyin.com/user/…&nbsp;modal_id=7512713257124252982</a></span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <h3 id="music-biz" class="biz-title-h"><span class="biz-ico ico-music" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 17.6V6.6l8-1.8v10.6"/><circle cx="7" cy="17.8" r="2.4"/><circle cx="15" cy="15.6" r="2.4"/></svg></span>光厂音乐</h3>
+      <section class="biz-roles" data-biz="music">
+      <div class="br-tabs" role="tablist" aria-label="光厂音乐">
+        <button type="button" class="br-tab is-active" role="tab" id="music-tab-buyer" aria-selected="true" aria-controls="music-panel-buyer" data-role="buyer">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>买方客户</span>
+        </button>
+        <button type="button" class="br-tab" role="tab" id="music-tab-contributor" aria-selected="false" aria-controls="music-panel-contributor" data-role="contributor">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>供稿人</span>
+        </button>
+      </div>
+        <div class="br-panel is-active" id="music-panel-buyer" role="tabpanel" aria-labelledby="music-tab-buyer">
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">受众画像</h5>
+              <p class="br-p">品牌方、广告公司、影视公司、企业、媒体、自媒体博主等</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">需求场景</h5>
+              <ul class="br-list">
+              <li><b>正版配乐</b><span class="br-slash">/</span>商单需要正版配乐</li>
+              <li><b>分发侵权</b><span class="br-slash">/</span>多平台分发，担心音乐侵权</li>
+              <li><b>定制预算</b><span class="br-slash">/</span>预算有限，请不起专业作曲定制</li>
+              </ul>
+          <p class="br-note">可在光厂音乐高效筛选、即买即用，避免版权风险。</p>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="music-panel-buyer-detail" data-more="查看具体场景" data-less="收起说明">
+                <span class="br-more-label">查看具体场景</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="music-panel-buyer-detail" hidden>
+<p class="br-dp">商单需要正版配乐、多平台分发担心音乐侵权、项目预算有限请不起专业作曲定制，都可以通过光厂音乐高效筛选、即买即用，解决版权风险。</p>
+          </div>
+        </div>
+        <div class="br-panel" id="music-panel-contributor" role="tabpanel" aria-labelledby="music-tab-contributor" hidden>
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">受众画像</h5>
+              <p class="br-p">原创音乐人、编曲师等</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">需求场景</h5>
+              <ul class="br-list">
+              <li><b>定制音乐</b><span class="br-slash">/</span>给客户定制但最终没用上的高质量音乐，可上传继续变现</li>
+              <li><b>销售渠道</b><span class="br-slash">/</span>手上有大量优质音乐、缺少销售渠道，可整理上传</li>
+              <li><b>正规授权</b><span class="br-slash">/</span>想让作品正规化授权、获得持续版权收益，可上传</li>
+              </ul>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="music-panel-contributor-detail" data-more="查看具体场景" data-less="收起说明">
+                <span class="br-more-label">查看具体场景</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="music-panel-contributor-detail" hidden>
+<p class="br-dp">1、给客户定制的高质量音乐但没用上，可以上传到光厂继续变现；</p>
+            <p class="br-dp">2、平时自身创作了大量的优质音乐，缺乏销售渠道，可以整理上传；</p>
+            <p class="br-dp">3、想要将自己的音乐作品正规化授权，获得持续的版权收益，也可以进行上传。</p>
+          </div>
+        </div>
+      </section>
+
+        <div class="card">
+<h4 id="music-highlights">业务亮点 · 买方侧</h4>
+          <ol class="num-list">
+            <li>光厂现有数十万首不同风格的版权音乐，可满足宣传片、广告片、院线影视、综艺节目、Vlog、短视频、直播等多场景使用</li>
+            <li>光厂音乐均来自于国内外知名版权音乐供应商，每一次购买行为光厂都会提供授权书，版权有保障</li>
+            <li>根据使用场景灵活选择企业或个人授权方式，下载后随片授权永久有效，全球通用</li>
+            <li>用户可根据情绪、节奏感、唱腔、鼓点等不同维度和关键词搜索筛选想要的音乐类型，下载前可无限试听</li>
+          </ol>
+
+          <h4>业务亮点 · 供稿人侧</h4>
+          <ol class="num-list">
+            <li>为优质原创音乐作品提供多元化的变现渠道，音乐人个人 / 企业店铺作品销售收益比例高至 <span class="num">70%</span>。</li>
+            <li>成熟的视频素材业务提供百万级刚需流量，视频带货 + 歌单分佣推广，助力音乐作品销售</li>
+          </ol>
+
+          <details>
+            <summary>业务信息参考 · 买方 / 供稿人案例（5 条）</summary>
+            <div class="details-body">
+              <p class="label" style="margin-top:14px">买方视角</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">剪辑师的修改意见含金量还在上升 #剪辑 #剪辑...</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://v.douyin.com/FlBy4HEANJk/" target="_blank" rel="noopener">v.douyin.com/FlBy4HEANJk/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">我用一条宣传片跟老板换了一顿火锅吃，快来看看值不值...</span>
+                  <span class="case-src"><span class="dom">抖音</span><a href="https://v.douyin.com/xUvnCKYCPPQ/" target="_blank" rel="noopener">v.douyin.com/xUvnCKYCPPQ/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">这样剪音乐，视频听起来会更高级！ 分享一个我在实战...</span>
+                  <span class="case-src"><span class="dom">小红书</span><a href="http://xhslink.com/o/6gKFD2d1eLy" target="_blank" rel="noopener">xhslink.com/o/6gKFD2d1eLy</a></span>
+                </li>
+                <li>
+                  <span class="case-title">爆款旅综｜旅游综艺BGM高效寻找指南✨ 为什么看综艺可...</span>
+                  <span class="case-src"><span class="dom">小红书</span><a href="http://xhslink.com/o/2CSsMlTckq0" target="_blank" rel="noopener">xhslink.com/o/2CSsMlTckq0</a></span>
+                </li>
+              </ul>
+              <p class="label" style="margin-top:22px">供稿人视角</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">【聊行业】职业音乐人从业四年才懂的一些东西...</span>
+                  <span class="case-src"><span class="dom">B站</span><a href="https://www.bilibili.com/video/BV1jh411K7d8/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1jh411K7d8</a></span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <h3 id="sfx-biz">光厂音效</h3>
+        <div class="card">
+          <ol class="num-list">
+            <li>海量专业音效，覆盖游戏、交通、人声、生活、自然等内容全场景，轻松提升作品质感与趣味</li>
+            <li>每日免费下载，注册即可享 <span class="num">5 次</span>额度</li>
+            
+            <li>支持自定义收藏夹，随需整理，打造个人专属音效库</li>
+            <li>不需要逐一点击，鼠标悬停即可流畅播放，体验丝滑（产品体验）</li>
+          </ol>
+          <div class="note"><strong>供稿人说明：</strong>暂不支持用户自主上传。</div>
+          <div class="note"><strong>推广说明：</strong>光厂音效不作为单独推广，相关推广内容可结合光厂音乐统一进行。</div>
+        </div>
+      </section>
+
+      <!-- ================= 02 发布与竞品规则 ================= -->
+      <section id="rules">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 02</span>
+          <h2>发布与竞品规则</h2>
+          <p class="sec-desc">发布信息、广告形式与竞品排他要求，三类合作形式统一适用；具体执行以沟通确认为准。</p>
+        </div>
+
+        <div class="card card-tight">
+          <table class="tbl tbl-narrow">
+            <tbody>
+              <tr><td style="width: 152px; min-width: 152px;">发布信息</td><td>发布账号、账号链接、发布平台、发布时间</td></tr>
+              <tr><td style="width: 152px; min-width: 152px;">广告形式 &amp; 推广业务</td><td>具体以沟通为准</td></tr>
+              <tr><td style="width: 152px; min-width: 152px;">竞品要求</td><td>不出现国内竞品</td></tr>
+              <tr><td style="width: 152px; min-width: 152px;">主要竞品</td><td style="font-weight: normal">新片场、包图网、爱给网、潮点视频、4K中国、图虫创意、8kraw、曲多多、淘声网、猴子音悦、觅知网、耳聆网等音视频素材交易类网站（品牌方可根据市场情况更新）</td></tr>
+              <tr>
+                <td style="width: 152px; min-width: 152px;">排竞期</td>
+                <td>内容发布前 <span class="limit">3 个月</span> 至发布后 <span class="limit">3 个月</span> 内，不得在抖音、小红书、B站、视频号等渠道为国内竞品创作或发布任何形式的商业推广内容</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="formats">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 03</span>
+          <h2>合作形式</h2>
+        </div>
+      <div class="glance mode-switch" role="tablist" aria-label="合作类型">
+        <button type="button" role="tab" id="tab-video-coop" class="glance-card mode-card mc-video" data-target="video-coop" data-label="查看详情 →" data-active-label="收起详情" aria-controls="video-coop" aria-selected="false">
+          <div class="gc-top"><span class="gc-index">模式 01</span><span class="gc-tag">视频</span><span class="gc-state">正在查看</span></div>
+          <h3>视频合作</h3>
+          <p class="gc-dirs">亲历种草 · 横向测评 · 合集 / 植入</p>
+          <p class="gc-deliver"><b>交付</b>　1 条原创视频</p>
+          <span class="gc-action">查看详情 →</span>
+        </button>
+        <button type="button" role="tab" id="tab-image-coop" class="glance-card mode-card mc-image" data-target="image-coop" data-label="查看详情 →" data-active-label="收起详情" aria-controls="image-coop" aria-selected="false">
+          <div class="gc-top"><span class="gc-index">模式 02</span><span class="gc-tag">图文</span><span class="gc-state">正在查看</span></div>
+          <h3>图文合作</h3>
+          <p class="gc-dirs">图文种草 · 图文测评 &amp; 合集清单</p>
+          <p class="gc-deliver"><b>交付</b>　图片 <b>≥ 6 张</b> + 正文 <b>≥ 600 字</b></p>
+          <span class="gc-action">查看详情 →</span>
+        </button>
+        <button type="button" role="tab" id="tab-clip-coop" class="glance-card mode-card mc-clip" data-target="clip-coop" data-label="查看详情 →" data-active-label="收起详情" aria-controls="clip-coop" aria-selected="false">
+          <div class="gc-top"><span class="gc-index">模式 03</span><span class="gc-tag">切片</span><span class="gc-state">正在查看</span></div>
+          <h3>切片（中插）合作</h3>
+          <p class="gc-dirs">剪辑干货 · 运营干货 · 素材 / 工具盘点，中插植入</p>
+          <p class="gc-deliver"><b>交付</b>　主线 1 条 + 中插 <b>≥ 30s</b></p>
+          <span class="gc-action">查看详情 →</span>
+        </button>
+      </div>
+
+      <div class="coop-detail" id="coop-detail" hidden="">
+        <div class="cd-head">
+          <span class="cd-title"></span>
+          <nav class="cd-links" aria-label="本页定位">
+            <a href="#" data-jump="directions" class="active">内容方向</a>
+            <a href="#" data-jump="cases">参考案例</a>
+            <a href="#" data-jump="specs">内容规格要求</a>
+          </nav>
+          <button type="button" class="cd-close" data-close-detail="">收起详情</button>
+        </div>
+
+      <!-- ================= 03 视频合作 ================= -->
+      <section id="video-coop" class="coop-panel" data-mode="video-coop" role="tabpanel" hidden="">
+        <div class="sec-head">
+          <h2>视频合作</h2>
+          <p class="sec-desc">三种内容方向任选其一：亲历种草、横向测评、合集 / 植入。统一要求真实人设、实操演示、品牌信息传达准确。</p>
+        </div>
+
+        <!-- 方向 A -->
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">A</span><h3>亲历种草</h3></div>
+          <p class="dir-sub">内容方向 · 供稿人 / 买方第一视角</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>光厂供稿人或买家创作者的真实人设，从第一视角呈现达人所代表圈层的需求场景，并通过实操演示，解构光厂是如何从不同维度解决用户痛点的，内容真实能让用户信服，逻辑清晰，品牌信息传达准确无误。</p>
+
+            <table class="tbl tbl-narrow" style="margin-top:6px">
+              <tbody>
+                <tr><td>供稿人视角参考</td><td>旅行摄影师是如何实现兴趣和赚钱兼得的？（实操将合作推广的视频素材上传至光厂）</td></tr>
+                <tr><td>买方视角参考</td><td>后期人常用的视频版权素材网站推荐（实操从光厂下载素材并剪辑成片展示效果）</td></tr>
+              </tbody>
+            </table>
+
+            <details>
+              <summary>参考案例（2 条）· 仅供参考，以具体沟通为主</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title">【聊行业】职业音乐人从业四年才懂的一些东西...</span>
+                    <span class="case-src"><span class="dom">B站</span><a href="https://www.bilibili.com/video/BV1jh411K7d8/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1jh411K7d8</a></span>
+                  </li>
+                  <li>
+                    <span class="case-title">【学剪辑总为素材发愁？素材技巧必须安利大家】</span>
+                    <span class="case-src"><span class="dom">小红书</span><a href="https://www.xiaohongshu.com/explore/682bfbe5000000002100934e?xsec_token=ABOHqDy-koof2TjaT-sh_XzeJlyhopfd8BIjOGewJpRw8=&amp;xsec_source=pc_user" target="_blank" rel="noopener">xiaohongshu.com/explore/682bfbe5…</a></span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- 方向 B -->
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">B</span><h3>横向测评</h3></div>
+          <p class="dir-sub">内容方向 · 科技数码区专业博主形象</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>科技数码区专业博主形象，通过功能体验和实操演示，展示光厂各项业务逻辑和业务亮点；视频风格偏前沿、科技、智能化、数据化表达，逻辑清晰，品牌信息传达准确无误。</p>
+
+            <div class="note">
+              <p><strong>视频业务参考：</strong>通过演示经典搜索与 AI 搜索在应用上的区别，展现光厂在 AI 搜索技术上的强大和碾压性优势，揭示光厂 AI 搜索之所以强大，是建立在强大的素材库基础之上的底层逻辑。</p>
+            </div>
+
+            <details>
+              <summary>参考案例（1 条）· 仅供参考，以具体沟通为主</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title">【下个十年，最强生产力？AI 写作工具硬核测评 - 秘塔写作猫】</span>
+                    <span class="case-src"><span class="dom">B站</span><a href="https://www.bilibili.com/video/BV19Y4y1f7oY/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV19Y4y1f7oY</a></span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- 方向 C -->
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">C</span><h3>合集 / 植入</h3></div>
+          <p class="dir-sub">内容方向 · 专业人设观点输出 + 横向测评</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <ol class="num-list" style="margin-bottom:0">
+              <li>专业人设，输出关于音视频素材及接单网站的相关观点（可以是市场的分析，或者其他能展现专业性的创意），并简单说明选择对应平台的要点（结合产品卖点）</li>
+              <li>对市面上比较头部的几个网站（非国内竞品网站）进行测评，分析各自优缺点，在展示序位、话术和篇幅上向主推网站（光厂）倾斜，逻辑清晰，品牌信息传达准确无误。</li>
+            </ol>
+
+            <details>
+              <summary>参考案例（2 条）· 仅供参考，以具体沟通为主</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title">【做UP主两年！这是我私藏的所有视频剪辑素材网站！】</span>
+                    <span class="case-src"><span class="dom">B站</span><a href="https://www.bilibili.com/video/BV1u84y1H7a3/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1u84y1H7a3</a></span>
+                  </li>
+                  <li>
+                    <span class="case-title">【效率提升100000%！最强音视频图片网站分享，让你的视频分分钟改头换面！】</span>
+                    <span class="case-src"><span class="dom">B站</span><a href="https://www.bilibili.com/video/BV1Tz4y1b7WD/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1Tz4y1b7WD</a></span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <h3>内容规格要求</h3>
+        <div class="spec-list">
+          <div class="spec">
+            <div class="spec-n">1</div>
+            <p><b>内容必含要素：</b>需包含网页端 / 客户端实操画面；素材、音乐、音效的使用效果演示；以供稿人视角，展示素材上传流程与收益路径。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">2</div>
+            <p><b>原创与授权：</b>视频为达人原创内容，严禁搬运、拼接他人成片；视频中使用的素材、音乐、音效，须为正版授权资源或光厂站内资源。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">3</div>
+            <p><b>审核与交付：</b>发布前提交终版内容，经品牌方审核确认后方可上线；发布后交付原片文件，并授予品牌方二次传播使用权，配合评论区维护及数据回传。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 04 图文合作 ================= -->
+      <section id="image-coop" class="coop-panel" data-mode="image-coop" hidden="" role="tabpanel">
+        <div class="sec-head">
+          <h2>图文合作</h2>
+          <p class="sec-desc">图文种草或图文测评 / 合集清单两种方向，以原创截图与真实使用场景呈现完整链路。</p>
+        </div>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">A</span><h3>图文种草（真实人设 ＋ 使用场景）</h3></div>
+          <p class="dir-sub">内容方向 · 剪辑师 / 摄影师 / 自媒体博主 / 新媒体运营</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>以剪辑师 / 摄影师 / 自媒体博主 / 新媒体运营等真实身份第一视角，结合企业宣传片、旅行短视频、文旅创作等具体创作场景，分享商业项目或内容创作里找素材、配乐的痛点，完整呈现「项目需求→站内检索 / 筛选→下载→落地成品」的全流程。</p>
+
+            <details>
+              <summary>参考案例（1 条）· 仅供参考，以具体沟通为主</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title"><a href="https://www.xiaohongshu.com/discovery/item/6a6b2348000000003301c966?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABUAeT1GGYUMQv7bDfRp5ose3PaUKWpaENULN_pVOhYic=&amp;xsec_source=pc_share" target="_blank" rel="noopener">综艺感剪辑！爆款综艺的宝藏秘方！</a></span>
+                    <div class="case-src">内容话术参考，具体合作细节以实际沟通为准</div>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">B</span><h3>图文测评 &amp; 合集清单</h3></div>
+          <p class="dir-sub">内容方向 · 多平台横向对比</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>以素材网站、配乐工具为切入点，选取多个素材网站横向对比（不提及国内竞品），从本土化素材丰富度、检索效率、授权合规等使用体验维度客观测评，在展示序位、话术和篇幅上向主推网站（光厂）适度倾斜。</p>
+
+            <details>
+              <summary>参考案例（2 条）· 仅供参考，以具体沟通为主</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title"><a href="https://www.xiaohongshu.com/discovery/item/69f3283d000000003700dc83?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABGZ-dGdDiezxbzg-ixKdbdxBgY61XDOZNUhS7kPcYHkw=&amp;xsec_source=pc_share" target="_blank" rel="noopener">剪辑师怎么避免素材侵权？去哪找可商素材？</a></span>
+                  </li>
+                  <li>
+                    <span class="case-title"><a href="https://www.xiaohongshu.com/discovery/item/693286d5000000001e004dbb?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABWfnVTppDt4QSgUAQVo5HMK2kkW5kzlB6SNAiNey8Dt8=&amp;xsec_source=pc_share" target="_blank" rel="noopener">还在找视频素材？这9个网站够用了</a></span>
+                  </li>
+                </ul>
+                <div class="case-src">（内容话术参考，具体合作细节以实际沟通为准）</div>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <h3>内容规格要求</h3>
+        <div class="spec-list">
+          <div class="spec">
+            <div class="spec-n">1</div>
+            <p><b>图文篇幅：</b>图片 <span class="limit">≥ 6 张</span>（含首图 + 内页），正文 <span class="limit">≥ 600 字</span>。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">2</div>
+            <p><b>截图规范：</b>光厂界面截图清晰，引用素材需标注对应素材编号。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">3</div>
+            <p><b>原创与授权：</b>图文为达人原创截图 / 原创内容，禁止搬运他人图文；所用截图、素材需为自有或已取得授权。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">4</div>
+            <p><b>审核与交付：</b>正式发布前提交封面图、图片排版方案及文案初稿，品牌方审核确认后方可上线；发布后交付原图文件，并授予品牌方二次使用权限。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05 切片 ================= -->
+      <section id="clip-coop" class="coop-panel" data-mode="clip-coop" hidden="" role="tabpanel">
+        <div class="sec-head">
+          <h2>切片（中插）合作</h2>
+          <p class="sec-desc">主线照常输出达人日常内容，在视频合适位置切入独立的光厂推广片段；前后主线与广告段可相对独立，不要求强剧情绑定。</p>
+        </div>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">A</span><h3>剪辑干货 ＋ 中插</h3></div>
+          <p class="dir-sub">内容方向 · 剪辑技巧、转场 / 调色、声音设计</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>达人正常输出剪辑、自媒体干货内容，在视频合适位置（建议中段）切入一段独立的光厂推广片段，集中演示平台检索功能、素材 / 配乐优势；信息传递直白清晰，植入片段节奏明快、卖点集中，前后主线与广告段可相对独立，不要求强剧情绑定。</p>
+
+            <p class="label">参考案例（仅供参考，以具体沟通为主）</p>
+            <p>干货内容进行中切入独立品牌广告段，广告段自成一体，前后主线照常继续，可参考转转中插广告或本 brief「业务信息参考」中的光厂植入部分内容。</p>
+          </div>
+        </article>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">B</span><h3>自媒体运营干货 ＋ 中插</h3></div>
+          <p class="dir-sub">内容方向 · 涨粉、接单、变现经验</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>主线是课程式经验分享，讲解具体实操方法（如特效制作、商单交付技巧），讲到需要素材、配乐的环节时，顺势切入光厂推广片段，演示平台检索、素材配乐使用，演示完毕回到主线完成收尾。</p>
+            <div class="note"><strong>参考案例：</strong>以具体沟通为准。</div>
+          </div>
+        </article>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">C</span><h3>素材 / 工具盘点 ＋ 中插</h3></div>
+          <p class="dir-sub">内容方向 · 素材网站、配乐网站合集</p>
+          <div class="dir-body">
+            <p class="label">创意说明</p>
+            <p>主线为运营或变现经验：讲清自媒体 / 剪辑师的收入结构与接单流程，引导到“素材从哪来、音乐会不会侵权”时切入广告段。</p>
+            <div class="note"><strong>参考案例：</strong>以具体沟通为准。</div>
+          </div>
+        </article>
+
+        <h3>内容规格要求</h3>
+        <div class="spec-list">
+          <div class="spec">
+            <div class="spec-n">1</div>
+            <p><b>数量和时长：</b>主线视频 1 条 + 中插广告 1 段，中插 <span class="limit">≥ 30s</span>，插入位置在主线中段（约视频 <span class="num">1/3 至 2/3</span> 处），主线时长按达人日常内容习惯即可。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">2</div>
+            <p><b>植入要求：</b>集中演示平台功能（如 AI 搜索、关键词搜索）与素材 / 配乐优势，核心卖点不少于 2-3 个。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">3</div>
+            <p><b>原创与授权：</b>中插段须为达人原创拍摄与制作，不得直接搬运品牌方素材或他人广告成片；使用的素材、音乐、音效须为正版授权或光厂站内内容。</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">4</div>
+            <p><b>审核与交付：</b>需提供主线脚本大纲、中插段脚本与完整视频，经品牌方确认后方可发布；发布后提供原始视频文件并授权品牌方二次传播，配合评论区维护与数据回传。</p>
+          </div>
+        </div>
+      </section>
+      </div>
+      </section>
+
+      <!-- ================= 06 通用要求 ================= -->
+      <section id="general">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 04</span>
+          <h2>通用合作要求</h2>
+          <p class="sec-desc">以下 7 条为视频、图文、切片三类合作共同适用的执行要求；各类合作的专属规格见对应章节。</p>
+        </div>
+
+        <div class="req-list">
+          <div class="req">
+            <div class="req-n">01</div>
+            <p>通过星图 / 花火 / 蒲公英下单接单或者签署达人推广合同 <span class="quote-tag">*以实际沟通为准</span></p>
+          </div>
+          <div class="req">
+            <div class="req-n">02</div>
+            <p>达人需提供脚本大纲和样片审核</p>
+          </div>
+          <div class="req">
+            <div class="req-n">03</div>
+            <p>达人在合作视频发布及推广期间有义务进行评论区维护</p>
+          </div>
+          <div class="req">
+            <div class="req-n">04</div>
+            <p>合作内容要求全平台分发 <span class="quote-tag">*以实际沟通为准</span></p>
+          </div>
+          <div class="req">
+            <div class="req-n">05</div>
+            <p>达人需配合品牌方提供相应推广数据</p>
+          </div>
+          <div class="req">
+            <div class="req-n">06</div>
+            <p>内容发布后，达人需向甲方提供原始视频 / 图片文件，并授权甲方在社交媒体平台进行二次传播</p>
+          </div>
+          <div class="req">
+            <div class="req-n">07</div>
+            <p>视频、图文、切片合作需在发布后 <span class="limit">7 天</span>内回传推广数据（阅读 / 播放、互动、收藏），内容保留期不少于 <span class="limit">1 年</span>。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 附录 ================= -->
+      <section id="overseas" class="appendix">
+        <div class="sec-head">
+          <span class="sec-num">APPENDIX</span>
+          <h2>海外达人 brief 注意事项</h2>
+        </div>
+
+        <div class="card">
+          <h3>一、平台与视频要求</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>必须出现</td><td>① 品牌名光厂 ；② 网站或素材下载使用过程的画面；③ 素材、音乐或音效的实际效果展示</td></tr>
+              <tr><td>画幅与语言</td><td>口播语言不限，必须有中文字幕；东南亚市场建议双语字幕（中文＋印尼语 / 越南语 / 泰语）</td></tr>
+              <tr><td>交付物</td><td>成片文件＋封面图+文案；具体以合同为准</td></tr>
+              <tr><td>官网语言说明</td><td>官网目前以中文界面为主，演示时可直接用中文界面。</td></tr>
+            </tbody>
+          </table>
+
+          <h3>二、内容方向</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>痛点解决型</td><td>先立痛点、再给方案。示例：“客户要中国味，翻遍国外素材库都找不到”“在海外拍中国场景成本太高，用素材解决”</td></tr>
+              <tr><td>工作流植入型</td><td>把光厂变成工作流中的一步，适合剪辑教学、调色、声音设计类账号。示例：“一条广告片从脚本到成片的完整工作流”“我用素材拼出一支中国新年广告”</td></tr>
+              <tr><td>成片验证型</td><td>用光厂素材独立做出中国风成片，用结果证明可行性。示例：“只用素材库镜头，我做了一条 30 秒广告”“同样的脚本换一套素材，差别有多大”</td></tr>
+              <tr><td>平台对比型</td><td>与国际主流素材平台横向对比，讲清差异化（中国题材、授权范围、授权形式）。示例：“素材网站合集推荐”“不同的素材库，差别究竟有多大”。</td></tr>
+              <tr><td>本土题材创作型</td><td>服务做中国题材的本地创作者。示例：“在美国剪一支关于中国的片子，素材从哪来”“我没去过中国，却剪出了一支中国旅行片”</td></tr>
+              <tr><td>AI＋实拍混合型</td><td>讲 AI 生成与实拍素材的混合工作流，光厂提供真实底素材。示例：“AI 生成＋实拍素材，我的混合工作流”“怎么让 AI 片子看起来更真实”</td></tr>
+            </tbody>
+          </table>
+
+          <h3>三、可讲卖点</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>中国题材独家性</td><td>中国本土场景、人文与节庆素材丰富，是国际平台很难替代的部分，适合需要“中国味”的项目</td></tr>
+              <tr><td>全球授权</td><td>素材支持全球授权、可商用；</td></tr>
+              <tr><td>一站式</td><td>视频、音乐、图片、音效在同一站解决，减少到处找素材和排查版权的成本</td></tr>
+              <tr><td>检索效率</td><td>支持关键词、素材编号检索；AI 搜索支持长句与口语化描述；可直接拖图找同款画面</td></tr>
+              <tr><td>成本</td><td>相比本地实拍或定制拍摄，用素材完成中国题材镜头成本更低（不承诺具体节省比例）</td></tr>
+              <tr><td>原创者可投稿（卖家）</td><td>如达人有原创素材，可说明平台接受创作者投稿；分成与规则以官网为准</td></tr>
+            </tbody>
+          </table>
+
+          <h3>四、海外版权与合规（必读）</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>使用边界</td><td>光厂素材仅可用于本条约定内容，不得转售、不得二次商用分发、不得提供给第三方使用</td></tr>
+              <tr><td>授权地域</td><td>光厂素材支持全球授权</td></tr>
+              <tr><td>广告披露</td><td>按发布地法规和平台规则标注付费合作：美国 FTC——#ad 或“Paid partnership with VJshi”；英国 ASA——#ad；欧盟——开启平台“付费合作”标签，并在首屏或描述写明 advertising；YouTube 勾选 Paid promotion，TikTok 开启 Branded content。</td></tr>
+              <tr><td>文化与账号</td><td>避开当地宗教、节日、政治敏感点，不使用刻板印象表达；账号近 3 个月无违规、擦边或争议言论；遵守各平台外链与引流规则</td></tr>
+              <tr><td>数据与隐私</td><td>不得在视频或描述中出现授权价格，涉及相关画面注意打码；画面里出现他人邮箱、账号、订单等个人信息时必须打码（GDPR / CCPA）。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="page-foot">
+        光厂 · 达人合作手册　V3.0<br>
+        本手册用于达人合作沟通，具体约定以双方合同及书面沟通确认为准。
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<template id="tpl-main-en">
+<!-- ================= Hero ================= -->
+      <header class="hero" id="top">
+        <div class="hero-intro">
+        <h1>VJshi · Creator Collaboration Handbook</h1>
+        <p class="lede">
+          A one-stop marketplace for licensed audio-visual stock assets. This handbook covers three collaboration models—video (custom) integration, image-text recommendation and reviews, and clip / mid-roll integration—and includes the brand introduction, business overview, content directions, reference cases, and content specifications.
+        </p>
+        <div class="meta-row">
+          <span>Website <b><a href="https://www.vjshi.com/" target="_blank" rel="noopener noreferrer">vjshi.com</a></b></span>
+          <span>Formats <b>Video / Image-text / Clip</b></span>
+          <span>Version <b>V3.0</b></span>
+          <span>Updated <b>2026.11</b></span>
+        </div>
+        </div>
+
+        <p class="section-label">Business promotion scope</p>
+        <div class="biz-grid">
+          <a class="biz-card" href="#video-highlights">
+            <span class="biz-no">01</span>
+            <div>
+              <div class="biz-name">VJshi Video</div>
+              <p class="biz-sub">Licensed video footage</p>
+            </div>
+            <span class="biz-go">View selling points</span>
+          </a>
+          <a class="biz-card" href="#music-highlights">
+            <span class="biz-no">02</span>
+            <div>
+              <div class="biz-name">VJshi Music</div>
+              <p class="biz-sub">Licensed music platform</p>
+            </div>
+            <span class="biz-go">View selling points</span>
+          </a>
+          <a class="biz-card" href="https://www.vjshi.com/cases" target="_blank" rel="noopener noreferrer">
+            <span class="biz-no">03</span>
+            <div>
+              <div class="biz-name">VJshi Cases</div>
+              <p class="biz-sub">Finished films &amp; project cases</p>
+            </div>
+            <span class="biz-go">Visit website <span class="arrow">↗</span></span>
+          </a>
+        </div>
+
+        <nav class="quicknav" aria-label="Quick navigation">
+          <a href="#brand">Brand &amp; Business</a>
+          <a href="#rules">Publishing &amp; Competitor Rules</a>
+          <a href="#video-coop">Video Collaboration</a>
+          <a href="#image-coop">Image-Text Collaboration</a>
+          <a href="#clip-coop">Clip Collaboration</a>
+          <a href="#general">General Requirements</a>
+        </nav>
+      </header>
+
+      <!-- ================= 01 Brand & Business ================= -->
+      <section id="brand">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 01</span>
+          <h2>Brand &amp; Business</h2>
+          <p class="sec-desc">VJshi provides one-stop licensed video, music, and sound-effect assets for brands, advertising agencies, film and TV companies, enterprises, media outlets, and content creators.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><h3 style="font-size:15px">Brand profile</h3><span class="pill">Brand overview</span></div>
+          <table class="tbl tbl-narrow">
+            <tbody>
+              <tr><td>Brand name</td><td>VJshi</td></tr>
+              <tr><td>Official website</td><td><a href="https://www.vjshi.com" target="_blank" rel="noopener">https://www.vjshi.com</a></td></tr>
+              <tr><td>Positioning</td><td>One-stop licensed stock marketplace</td></tr>
+              <tr><td>Brand slogan</td><td>Making creativity more valuable, making the world more vivid</td></tr>
+              <tr><td>Brand deck</td><td><a href="../vjshi-brand-intro.pdf" target="_blank" rel="noopener">VJshi brand introduction (PDF)</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="video-biz" class="biz-title-h"><span class="biz-ico ico-video" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.6"/><path d="M16 10.4l4.2-2.2v7.6L16 13.6z"/></svg></span>VJshi Video</h3>
+      <section class="biz-roles" data-biz="video">
+      <div class="br-tabs" role="tablist" aria-label="VJshi Video">
+        <button type="button" class="br-tab is-active" role="tab" id="video-tab-buyer" aria-selected="true" aria-controls="video-panel-buyer" data-role="buyer">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>Buyers</span>
+        </button>
+        <button type="button" class="br-tab" role="tab" id="video-tab-contributor" aria-selected="false" aria-controls="video-panel-contributor" data-role="contributor">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>Contributors</span>
+        </button>
+      </div>
+        <div class="br-panel is-active" id="video-panel-buyer" role="tabpanel" aria-labelledby="video-tab-buyer">
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">Audience</h5>
+              <p class="br-p">Brands, advertising agencies, film and TV companies, enterprises, media outlets, and independent creators</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">Use cases</h5>
+              <ul class="br-list">
+              <li><b>Rush jobs</b><span class="br-slash">/</span>ready-made templates or footage for fast delivery</li>
+              <li><b>Missing shots</b><span class="br-slash">/</span>weather or equipment issues make reshoots impossible</li>
+              <li><b>Tight budget</b><span class="br-slash">/</span>original shooting costs too much</li>
+              </ul>
+          <p class="br-note">All of these help teams cut costs and improve efficiency with VJshi.</p>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="video-panel-buyer-detail" data-more="View full context" data-less="Hide details">
+                <span class="br-more-label">View full context</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="video-panel-buyer-detail" hidden>
+<p class="br-dp">Whether a project is rushed and needs templates, footage was missed and cannot be reshot, or the budget is too tight for original production, VJshi helps teams cut costs and improve efficiency.</p>
+          </div>
+        </div>
+        <div class="br-panel" id="video-panel-contributor" role="tabpanel" aria-labelledby="video-tab-contributor" hidden>
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">Audience</h5>
+              <p class="br-p">Photographers, editors, VFX artists, motion-graphics designers, directors, producers, original short-video creators, and other content creators</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">Use cases</h5>
+              <ul class="br-list">
+              <li><b>Idle footage</b><span class="br-slash">/</span>generic shots not used in the final cut can be sold</li>
+              <li><b>Travel footage</b><span class="br-slash">/</span>city and nature clips add an income stream</li>
+              <li><b>Editing templates</b><span class="br-slash">/</span>strong templates from post-production can be sold</li>
+              </ul>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="video-panel-contributor-detail" data-more="View full context" data-less="Hide details">
+                <span class="br-more-label">View full context</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="video-panel-contributor-detail" hidden>
+<p class="br-dp">1. Generic footage shot during a project but not used in the final cut can be uploaded and sold on VJshi;</p>
+            <p class="br-dp">2. City and nature footage captured by travel creators can be organized and sold on VJshi for an extra income stream;</p>
+            <p class="br-dp">3. Post-production editors who create a strong editing template during a project can also upload and sell it on VJshi.</p>
+          </div>
+        </div>
+      </section>
+
+        <div class="card">
+<h4 id="video-highlights">Business highlights · Buyer side</h4>
+          <ol class="num-list">
+            <li>
+              <b>Industry-leading search algorithms</b> help creators find the footage they need quickly and precisely—saving time and improving production efficiency.
+              <ul class="sub-list">
+                <li><b>[Keyword search]</b>: Enter a keyword or asset ID in the homepage search bar to locate footage quickly. Ideal when you already know the asset name or ID, or need a precise search filtered by simple keywords.</li>
+                <li>
+                  <b>[AI Search (Lightcone Engine)]</b>: AI redefines stock search, moving beyond keywords so that what you search is what you picture.
+                </li>
+                <li><b>[Visual search]</b>: Drag a reference image or video into the visual search box. Ideal when you have a clear visual reference, such as a design mockup or a video screenshot.</li>
+              </ul>
+            </li>
+            <li>
+              <b>A vast, diverse, locally relevant, and fast-updating footage library</b>, ready to download for different commercial scenarios and tailored client needs.
+              <ul class="sub-list">
+                <li><b>[Local relevance]</b>: Many free commercial stock sites focus on Western scenes, which often do not fit the needs of clients in China.</li>
+                <li><b>[Wide range of asset types]</b>: Covers HD live-action footage, AE/PR templates, C4D models, and animated effects to meet a wide range of commercial needs.</li>
+                <li><b>[Fast updates]</b>: Many domestic stock sites have small libraries and slow updates, which cannot support time-sensitive projects. VJshi works with <span class="num">over 100,000</span> talented individual contributors who spot trends quickly and update the library fast.</li>
+              </ul>
+            </li>
+            <li><b>Strict rights-verification and control system</b>, with clear copyright so you can use assets with confidence.</li>
+            <li><b>Fourteen years in business</b>—a long-established stock footage marketplace with a market share of <span class="num">60%</span>, trusted and well regarded within the industry.</li>
+          </ol>
+
+          <h4>Business highlights · Contributor side</h4>
+          <ol class="num-list">
+            <li>Creators can reuse idle generic footage and maximize its value
+              <div class="note note-warn"><strong>Note:</strong> Promotions must emphasize that all works are original; copying or reselling others' work is strictly prohibited.</div>
+            </li>
+            <li>Self-upload and self-pricing; work full-time or part-time with flexible hours—ideal as a side income for content creators</li>
+            <li>Exclusive contributors earn a <span class="num">70%</span> sales commission; non-exclusive contributors earn <span class="num">60%</span>, with fast payouts</li>
+            <li>Millions of monthly visits and a large buyer base give VJshi contributors above-average exposure and conversion. Quality assets sell faster, and the same asset can be licensed repeatedly—generating passive income for creators</li>
+            <li>VJshi provides free copyright registration and enforcement services for exclusive contributors, protecting creators' rights</li>
+          </ol>
+
+          <details>
+            <summary>Business reference · Buyer / contributor cases (6)</summary>
+            <div class="details-body">
+              <p class="label" style="margin-top:14px">Buyer perspective</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">[One video ad fee = 2 months working at a bubble tea shop! A student creator's income breakdown]</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://www.douyin.com/video/7488181310607920425" target="_blank" rel="noopener">douyin.com/video/7488181310607920425</a></span>
+                </li>
+                <li>
+                  <span class="case-title">Turn unusable footage into cinematic cuts? Open your vlog like this...</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://v.douyin.com/MjM8EJcYVXU/" target="_blank" rel="noopener">v.douyin.com/MjM8EJcYVXU/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">[What do A-roll and B-roll mean in video production?]</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://www.douyin.com/video/7497064922111642943" target="_blank" rel="noopener">douyin.com/video/7497064922111642943</a></span>
+                </li>
+              </ul>
+              <p class="label" style="margin-top:22px">Contributor perspective</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">[A step-by-step guide: this one thing earned me an extra ¥200K a year—and you can do it too!]</span>
+                  <span class="case-src"><span class="dom">Bilibili</span><a href="https://www.bilibili.com/video/BV1EP411d7QZ/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1EP411d7QZ</a></span>
+                </li>
+                <li>
+                  <span class="case-title">“May your passion be a source that glows steadily for years to come” #vlog #thoughts #VJshi #stockfootage @VJshi</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://v.douyin.com/i5g9CkJj/" target="_blank" rel="noopener">v.douyin.com/i5g9CkJj/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">[Every chase for light is a burning memory of youth]</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://www.douyin.com/user/MS4wLjABAAAAozLRDd0vng2-gaLbqsXCEdRKAojk9wLYjS7qKM2PeW6MB2kzNcyMwX7O77TFoUX4?from_tab_name=main&amp;modal_id=7512713257124252982" target="_blank" rel="noopener">douyin.com/user/…&nbsp;modal_id=7512713257124252982</a></span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <h3 id="music-biz" class="biz-title-h"><span class="biz-ico ico-music" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 17.6V6.6l8-1.8v10.6"/><circle cx="7" cy="17.8" r="2.4"/><circle cx="15" cy="15.6" r="2.4"/></svg></span>VJshi Music</h3>
+      <section class="biz-roles" data-biz="music">
+      <div class="br-tabs" role="tablist" aria-label="VJshi Music">
+        <button type="button" class="br-tab is-active" role="tab" id="music-tab-buyer" aria-selected="true" aria-controls="music-panel-buyer" data-role="buyer">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>Buyers</span>
+        </button>
+        <button type="button" class="br-tab" role="tab" id="music-tab-contributor" aria-selected="false" aria-controls="music-panel-contributor" data-role="contributor">
+          <span class="br-tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.2 20c.6-3.6 3.4-5.6 6.8-5.6s6.2 2 6.8 5.6"/></svg></span><span>Contributors</span>
+        </button>
+      </div>
+        <div class="br-panel is-active" id="music-panel-buyer" role="tabpanel" aria-labelledby="music-tab-buyer">
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">Audience</h5>
+              <p class="br-p">Brands, advertising agencies, film and TV companies, enterprises, media outlets, and independent creators</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">Use cases</h5>
+              <ul class="br-list">
+              <li><b>Licensed music</b><span class="br-slash">/</span>commercial projects need cleared tracks</li>
+              <li><b>Distribution</b><span class="br-slash">/</span>multi-platform posting raises copyright concerns</li>
+              <li><b>Custom budget</b><span class="br-slash">/</span>custom composition is unaffordable</li>
+              </ul>
+          <p class="br-note">VJshi Music offers efficient filtering and instant licensing to avoid copyright risk.</p>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="music-panel-buyer-detail" data-more="View full context" data-less="Hide details">
+                <span class="br-more-label">View full context</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="music-panel-buyer-detail" hidden>
+<p class="br-dp">Whether a commercial project needs licensed music, multi-platform distribution raises copyright concerns, or the budget cannot cover custom composition, VJshi Music offers efficient filtering and instant licensing to remove copyright risk.</p>
+          </div>
+        </div>
+        <div class="br-panel" id="music-panel-contributor" role="tabpanel" aria-labelledby="music-tab-contributor" hidden>
+          <div class="br-cols">
+            <div class="br-col br-aud">
+              <h5 class="br-h">Audience</h5>
+              <p class="br-p">Original musicians, arrangers, and other music creators</p>
+            </div>
+            <div class="br-col br-need">
+              <h5 class="br-h">Use cases</h5>
+              <ul class="br-list">
+              <li><b>Unused custom work</b><span class="br-slash">/</span>keep earning from tracks that were not used</li>
+              <li><b>No sales channel</b><span class="br-slash">/</span>upload and sell a large original catalog</li>
+              <li><b>Formal licensing</b><span class="br-slash">/</span>earn ongoing royalties from licensed work</li>
+              </ul>
+              <button type="button" class="br-more" aria-expanded="false" aria-controls="music-panel-contributor-detail" data-more="View full context" data-less="Hide details">
+                <span class="br-more-label">View full context</span><span class="br-caret" aria-hidden="true">&#8964;</span>
+              </button>
+            </div>
+          </div>
+          <div class="br-detail" id="music-panel-contributor-detail" hidden>
+<p class="br-dp">1. High-quality music custom-made for a client but ultimately unused can be uploaded to VJshi to keep earning;</p>
+            <p class="br-dp">2. Creators with a large catalog of original music and no sales channel can organize and upload it;</p>
+            <p class="br-dp">3. Creators who want formal licensing and ongoing royalty income can also upload their work.</p>
+          </div>
+        </div>
+      </section>
+
+        <div class="card">
+<h4 id="music-highlights">Business highlights · Buyer side</h4>
+          <ol class="num-list">
+            <li>VJshi offers hundreds of thousands of licensed tracks across styles, suitable for promos, ads, theatrical films, variety shows, vlogs, short videos, livestreams, and more</li>
+            <li>VJshi Music comes from established domestic and international licensed music suppliers; every purchase includes a license certificate for copyright assurance</li>
+            <li>Choose enterprise or individual licensing based on the use case; the license remains valid for the life of the production and works worldwide</li>
+            <li>Search and filter by mood, tempo, vocals, drum pattern, and other dimensions; preview tracks unlimited times before downloading</li>
+          </ol>
+
+          <h4>Business highlights · Contributor side</h4>
+          <ol class="num-list">
+            <li>Diverse monetization channels for quality original music; individual and enterprise store sales can earn up to <span class="num">70%</span>.</li>
+            <li>The established video business brings millions of high-intent visits; video commerce plus playlist revenue sharing helps music sell</li>
+          </ol>
+
+          <details>
+            <summary>Business reference · Buyer / contributor cases (5)</summary>
+            <div class="details-body">
+              <p class="label" style="margin-top:14px">Buyer perspective</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">Clients' revision notes keep getting more valuable #editing #postproduction...</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://v.douyin.com/FlBy4HEANJk/" target="_blank" rel="noopener">v.douyin.com/FlBy4HEANJk/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">I traded a promo video for a hotpot dinner with my boss—was it worth it?</span>
+                  <span class="case-src"><span class="dom">Douyin</span><a href="https://v.douyin.com/xUvnCKYCPPQ/" target="_blank" rel="noopener">v.douyin.com/xUvnCKYCPPQ/</a></span>
+                </li>
+                <li>
+                  <span class="case-title">Edit music like this and your video will sound more premium! A trick from real projects...</span>
+                  <span class="case-src"><span class="dom">Xiaohongshu</span><a href="http://xhslink.com/o/6gKFD2d1eLy" target="_blank" rel="noopener">xhslink.com/o/6gKFD2d1eLy</a></span>
+                </li>
+                <li>
+                  <span class="case-title">Viral travel shows | A quick guide to finding travel variety BGM. Why variety shows...</span>
+                  <span class="case-src"><span class="dom">Xiaohongshu</span><a href="http://xhslink.com/o/2CSsMlTckq0" target="_blank" rel="noopener">xhslink.com/o/2CSsMlTckq0</a></span>
+                </li>
+              </ul>
+              <p class="label" style="margin-top:22px">Contributor perspective</p>
+              <ul class="case-list">
+                <li>
+                  <span class="case-title">[Industry talk] What I learned after four years as a professional musician...</span>
+                  <span class="case-src"><span class="dom">Bilibili</span><a href="https://www.bilibili.com/video/BV1jh411K7d8/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1jh411K7d8</a></span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <h3 id="sfx-biz">VJshi Sound Effects</h3>
+        <div class="card">
+          <ol class="num-list">
+            <li>A vast professional sound-effect library covering games, traffic, voices, daily life, nature, and more—easily elevating the quality and fun of your work</li>
+            <li>Free daily downloads; registered users receive <span class="num">5</span> downloads per day</li>
+            <li>Signed creators and key accounts receive more free downloads—<span class="num">15</span> per day after signing, up to <span class="num">200</span></li>
+            <li>Create custom favorites to organize your own personal sound-effect library</li>
+            <li>(Product experience) No need to click each item—hover to play smoothly for a seamless browsing experience</li>
+          </ol>
+          <div class="note"><strong>Contributor note:</strong> Self-upload is not currently supported.</div>
+          <div class="note"><strong>Promotion note:</strong> VJshi Sound Effects is not promoted as a standalone business; related content can be integrated with VJshi Music.</div>
+        </div>
+      </section>
+
+      <!-- ================= 02 Publishing & competitor rules ================= -->
+      <section id="rules">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 02</span>
+          <h2>Publishing &amp; Competitor Rules</h2>
+          <p class="sec-desc">Publishing details, ad formats, and competitor-exclusivity requirements apply to all three collaboration formats; specific execution is subject to confirmation in discussion.</p>
+        </div>
+
+        <div class="card card-tight">
+          <table class="tbl tbl-narrow">
+            <tbody>
+              <tr><td>Publishing details</td><td>Account, account link, platform, and publishing time</td></tr>
+              <tr><td>Ad format &amp; promoted business</td><td>To be confirmed in discussion</td></tr>
+              <tr><td>Competitor requirement</td><td>No China-based competitor brands</td></tr>
+              <tr><td>Main competitors</td><td>Xinpianchang, Baotu, Aigei, Chaodian Video, 4K China, Tuchong Creative, 8KRAW, Qudooduo, Taosheng, Houzi Music, Mizhi, Erling, and other China-based stock video/audio marketplaces (the brand may update this list based on market conditions)</td></tr>
+              <tr>
+                <td>Exclusivity window</td>
+                <td>From <span class="limit">3 months</span> before publishing to <span class="limit">3 months</span> after publishing, the creator must not create or publish any form of commercial promotion for China-based competitor brands on Douyin, Xiaohongshu, Bilibili, WeChat Channels, or other channels</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="formats">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 03</span>
+          <h2>Collaboration Formats</h2>
+        </div>
+      <div class="glance mode-switch" role="tablist" aria-label="Collaboration formats">
+        <button type="button" role="tab" id="tab-video-coop" class="glance-card mode-card mc-video" data-target="video-coop" data-label="View details →" data-active-label="Collapse details" aria-controls="video-coop" aria-selected="false">
+          <div class="gc-top"><span class="gc-index">MODE 01</span><span class="gc-tag">Video</span><span class="gc-state">Viewing</span></div>
+          <h3>Video collaboration</h3>
+          <p class="gc-dirs">First-hand recommendation · Comparative review · Roundup / Integration</p>
+          <p class="gc-deliver"><b>Deliverable</b>　1 original video</p>
+          <span class="gc-action">View details →</span>
+        </button>
+        <button type="button" role="tab" id="tab-image-coop" class="glance-card mode-card mc-image" data-target="image-coop" data-label="View details →" data-active-label="Collapse details" aria-controls="image-coop" aria-selected="false">
+          <div class="gc-top"><span class="gc-index">MODE 02</span><span class="gc-tag">Image-text</span><span class="gc-state">Viewing</span></div>
+          <h3>Image-text collaboration</h3>
+          <p class="gc-dirs">Recommendation posts · Reviews &amp; roundup lists</p>
+          <p class="gc-deliver"><b>Deliverable</b>　<b>≥ 6 images</b> + <b>≥ 600 words</b></p>
+          <span class="gc-action">View details →</span>
+        </button>
+        <button type="button" role="tab" id="tab-clip-coop" class="glance-card mode-card mc-clip" data-target="clip-coop" data-label="View details →" data-active-label="Collapse details" aria-controls="clip-coop" aria-selected="false">
+          <div class="gc-top"><span class="gc-index">MODE 03</span><span class="gc-tag">Clip</span><span class="gc-state">Viewing</span></div>
+          <h3>Clip (mid-roll) collaboration</h3>
+          <p class="gc-dirs">Editing tips · Growth tips · Stock / tool roundups with mid-roll integration</p>
+          <p class="gc-deliver"><b>Deliverable</b>　1 main video + mid-roll <b>≥ 30s</b></p>
+          <span class="gc-action">View details →</span>
+        </button>
+      </div>
+
+      <div class="coop-detail" id="coop-detail" hidden="">
+        <div class="cd-head">
+          <span class="cd-title">Video collaboration details</span>
+          <nav class="cd-links" aria-label="On this page">
+            <a href="#" data-jump="directions">Content directions</a>
+            <a href="#" data-jump="cases">Reference cases</a>
+            <a href="#" data-jump="specs">Content specifications</a>
+          </nav>
+          <button type="button" class="cd-close" data-close-detail="">Collapse details</button>
+        </div>
+
+      <!-- ================= 03 Video collaboration ================= -->
+      <section id="video-coop" class="coop-panel" data-mode="video-coop" role="tabpanel">
+        <div class="sec-head">
+          <h2>Video collaboration</h2>
+          <p class="sec-desc">Choose one of three content directions: first-hand recommendation, comparative review, or roundup / integration. All require an authentic persona, hands-on demonstrations, and accurate brand messaging.</p>
+        </div>
+
+        <!-- Direction A -->
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">A</span><h3>First-hand recommendation</h3></div>
+          <p class="dir-sub">Content direction · Contributor / buyer POV</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>Using the authentic persona of a VJshi contributor or buyer-creator, present the needs of the creator's community from a first-person perspective. Through hands-on demonstrations, break down how VJshi solves user pain points from different angles—grounded, convincing, logically clear, and accurate in brand messaging.</p>
+
+            <table class="tbl tbl-narrow" style="margin-top:6px">
+              <tbody>
+                <tr><td>Contributor POV reference</td><td>How can a travel photographer combine passion with income? (Demonstrate uploading the promoted footage to VJshi.)</td></tr>
+                <tr><td>Buyer POV reference</td><td>Recommended licensed footage sites for post-production professionals (Demonstrate downloading footage from VJshi and editing a finished piece.)</td></tr>
+              </tbody>
+            </table>
+
+            <details>
+              <summary>Reference cases (2) · For reference only; final details subject to discussion</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title">[Industry talk] What I learned after four years as a professional musician...</span>
+                    <span class="case-src"><span class="dom">Bilibili</span><a href="https://www.bilibili.com/video/BV1jh411K7d8/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1jh411K7d8</a></span>
+                  </li>
+                  <li>
+                    <span class="case-title">[Struggling to find footage while learning editing? You need these stock-footage tips]</span>
+                    <span class="case-src"><span class="dom">Xiaohongshu</span><a href="https://www.xiaohongshu.com/explore/682bfbe5000000002100934e?xsec_token=ABOHqDy-koof2TjaT-sh_XzeJlyhopfd8BIjOGewJpRw8=&amp;xsec_source=pc_user" target="_blank" rel="noopener">xiaohongshu.com/explore/682bfbe5…</a></span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- Direction B -->
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">B</span><h3>Comparative review</h3></div>
+          <p class="dir-sub">Content direction · Professional tech/digital creator persona</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>With a professional tech/digital creator persona, use feature walkthroughs and hands-on demos to show VJshi's business logic and highlights. The style should feel forward-looking, tech-driven, intelligent, and data-informed—logically clear and accurate in brand messaging.</p>
+
+            <div class="note">
+              <p><strong>Video business reference:</strong> Demonstrate the practical difference between classic search and AI search to showcase VJshi's strong, overwhelming advantage in AI search technology, and reveal the underlying logic: AI search is powerful because it is built on a strong asset library.</p>
+            </div>
+
+            <details>
+              <summary>Reference cases (1) · For reference only; final details subject to discussion</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title">[The next decade's productivity powerhouse? A hardcore review of AI writing tool Mita Writing Cat]</span>
+                    <span class="case-src"><span class="dom">Bilibili</span><a href="https://www.bilibili.com/video/BV19Y4y1f7oY/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV19Y4y1f7oY</a></span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- Direction C -->
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">C</span><h3>Roundup / integration</h3></div>
+          <p class="dir-sub">Content direction · Expert persona + comparative review</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <ol class="num-list" style="margin-bottom:0">
+              <li>From an expert persona, share views on video/audio stock assets and freelance booking platforms (market analysis or other professional creative angles), and briefly explain what to look for when choosing a platform (tied to product selling points)</li>
+              <li>Review several leading platforms on the market (excluding China-based competitors), analyzing their strengths and weaknesses, while giving the featured platform (VJshi) an advantage in placement order, messaging, and share of voice—logically clear and accurate in brand messaging.</li>
+            </ol>
+
+            <details>
+              <summary>Reference cases (2) · For reference only; final details subject to discussion</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title">[Two years as a creator: all my favorite stock-footage sites]</span>
+                    <span class="case-src"><span class="dom">Bilibili</span><a href="https://www.bilibili.com/video/BV1u84y1H7a3/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1u84y1H7a3</a></span>
+                  </li>
+                  <li>
+                    <span class="case-title">[Boost efficiency by 100000%! The best video, audio, and image sites to transform your videos]</span>
+                    <span class="case-src"><span class="dom">Bilibili</span><a href="https://www.bilibili.com/video/BV1Tz4y1b7WD/?share_source=copy_web&amp;vd_source=ae66d0caf0c1eaf3c575d9de6f6f8ba7" target="_blank" rel="noopener">bilibili.com/video/BV1Tz4y1b7WD</a></span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <h3>Content specifications</h3>
+        <div class="spec-list">
+          <div class="spec">
+            <div class="spec-n">1</div>
+            <p><b>Required elements:</b> Include hands-on screen recordings of the website / desktop app; demonstrations of how footage, music, and sound effects are used; and a contributor-POV walkthrough of the upload process and earning path.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">2</div>
+            <p><b>Originality &amp; licensing:</b> The video must be the creator's original work; copying or splicing others' finished videos is strictly prohibited. All footage, music, and sound effects used must be licensed assets or VJshi in-site assets.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">3</div>
+            <p><b>Review &amp; delivery:</b> Submit the final cut for brand review and approval before publishing. After publishing, deliver the original video file and grant the brand secondary distribution rights, and support comment-section maintenance and data reporting.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 04 Image-text collaboration ================= -->
+      <section id="image-coop" class="coop-panel" data-mode="image-coop" hidden="" role="tabpanel">
+        <div class="sec-head">
+          <h2>Image-text collaboration</h2>
+          <p class="sec-desc">Two directions—recommendation posts or review / roundup lists—using original screenshots and real usage scenarios to present the full journey.</p>
+        </div>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">A</span><h3>Recommendation post (authentic persona + real use case)</h3></div>
+          <p class="dir-sub">Content direction · Editors / photographers / independent creators / social media managers</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>From the first-person perspective of an editor, photographer, independent creator, or social media manager, use concrete scenarios such as corporate promos, travel short videos, or cultural-tourism projects to share pain points around finding footage and music for commercial or content projects. Present the full journey: “project need → on-site search / filtering → download → finished output.”</p>
+
+            <details>
+              <summary>Reference cases (1) · For reference only; final details subject to discussion</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title"><a href="https://www.xiaohongshu.com/discovery/item/6a6b2348000000003301c966?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABUAeT1GGYUMQv7bDfRp5ose3PaUKWpaENULN_pVOhYic=&amp;xsec_source=pc_share" target="_blank" rel="noopener">Variety-show style editing! The secret sauce behind hit shows</a></span>
+                    <div class="case-src">For messaging reference only; specific collaboration details are subject to discussion.</div>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">B</span><h3>Reviews &amp; roundup lists</h3></div>
+          <p class="dir-sub">Content direction · Multi-platform comparison</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>Starting from stock-footage sites and music tools, select several platforms for a side-by-side comparison (without mentioning China-based competitors). Objectively assess them on local content depth, search efficiency, licensing compliance, and other user-experience dimensions, while moderately favoring the featured platform (VJshi) in placement order, messaging, and share of voice.</p>
+
+            <details>
+              <summary>Reference cases (2) · For reference only; final details subject to discussion</summary>
+              <div class="details-body">
+                <ul class="case-list">
+                  <li>
+                    <span class="case-title"><a href="https://www.xiaohongshu.com/discovery/item/69f3283d000000003700dc83?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABGZ-dGdDiezxbzg-ixKdbdxBgY61XDOZNUhS7kPcYHkw=&amp;xsec_source=pc_share" target="_blank" rel="noopener">How can editors avoid copyright issues? Where to find commercially usable footage</a></span>
+                  </li>
+                  <li>
+                    <span class="case-title"><a href="https://www.xiaohongshu.com/discovery/item/693286d5000000001e004dbb?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABWfnVTppDt4QSgUAQVo5HMK2kkW5kzlB6SNAiNey8Dt8=&amp;xsec_source=pc_share" target="_blank" rel="noopener">Still hunting for footage? These 9 sites are enough</a></span>
+                  </li>
+                </ul>
+                <div class="case-src">(For messaging reference only; specific collaboration details are subject to discussion.)</div>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <h3>Content specifications</h3>
+        <div class="spec-list">
+          <div class="spec">
+            <div class="spec-n">1</div>
+            <p><b>Length:</b> <span class="limit">≥ 6 images</span> (cover + inner pages), with <span class="limit">≥ 600 words</span> of body copy.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">2</div>
+            <p><b>Screenshot standards:</b> VJshi interface screenshots must be clear; cited assets must include the corresponding asset ID.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">3</div>
+            <p><b>Originality &amp; licensing:</b> Images and copy must be the creator's original screenshots / content; copying others' posts is prohibited. All screenshots and assets used must be owned by the creator or properly licensed.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">4</div>
+            <p><b>Review &amp; delivery:</b> Before publishing, submit the cover image, image layout plan, and copy draft for brand review and approval. After publishing, deliver the original image files and grant the brand secondary usage rights.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05 Clip (mid-roll) ================= -->
+      <section id="clip-coop" class="coop-panel" data-mode="clip-coop" hidden="" role="tabpanel">
+        <div class="sec-head">
+          <h2>Clip (mid-roll) collaboration</h2>
+          <p class="sec-desc">The creator's regular content runs as usual, with a standalone VJshi promotional segment inserted at a suitable point. The main storyline and the ad segment can remain relatively independent; strong narrative integration is not required.</p>
+        </div>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">A</span><h3>Editing tips + mid-roll</h3></div>
+          <p class="dir-sub">Content direction · Editing techniques, transitions / color grading, sound design</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>The creator delivers their usual editing or creator-education content and inserts a standalone VJshi promotional segment at a suitable point (mid-video recommended), focusing on the platform's search features and footage / music advantages. Messaging should be direct and clear; the inserted segment should be fast-paced with concentrated selling points. The main storyline and the ad segment can remain relatively independent; strong narrative integration is not required.</p>
+
+            <p class="label">Reference cases (for reference only; final details subject to discussion)</p>
+            <p>Insert a standalone brand ad segment in the middle of educational content. The ad stands on its own while the main storyline continues before and after. Refer to Zhuanzhuan mid-roll ads or the VJshi integration examples in the “Business reference” section of this brief.</p>
+          </div>
+        </article>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">B</span><h3>Creator-growth tips + mid-roll</h3></div>
+          <p class="dir-sub">Content direction · Audience growth, booking, and monetization experience</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>The main storyline is a course-style experience share covering practical methods (e.g., VFX production or commercial delivery skills). When reaching the point where footage or music is needed, transition naturally into a VJshi promotional segment demonstrating platform search and footage/music use, then return to the main storyline to wrap up.</p>
+            <div class="note"><strong>Reference cases:</strong> To be confirmed in discussion.</div>
+          </div>
+        </article>
+
+        <article class="direction">
+          <div class="dir-head"><span class="dir-badge">C</span><h3>Stock / tool roundup + mid-roll</h3></div>
+          <p class="dir-sub">Content direction · Stock-footage sites and music-site roundups</p>
+          <div class="dir-body">
+            <p class="label">Creative brief</p>
+            <p>The main storyline covers operations or monetization experience: explain the income structure and booking process for creators / editors, then transition into the ad segment when the question “where does the footage come from, and will the music infringe copyright?” comes up.</p>
+            <div class="note"><strong>Reference cases:</strong> To be confirmed in discussion.</div>
+          </div>
+        </article>
+
+        <h3>Content specifications</h3>
+        <div class="spec-list">
+          <div class="spec">
+            <div class="spec-n">1</div>
+            <p><b>Quantity &amp; duration:</b> 1 main video + 1 mid-roll ad segment; the mid-roll must be <span class="limit">≥ 30s</span> and placed in the middle of the main video (around the <span class="num">1/3 to 2/3</span> mark). The main video length should follow the creator's usual content style.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">2</div>
+            <p><b>Integration requirements:</b> Focus on demonstrating platform features (e.g., AI search, keyword search) and footage / music advantages, covering at least 2–3 core selling points.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">3</div>
+            <p><b>Originality &amp; licensing:</b> The mid-roll segment must be originally shot and produced by the creator; it must not directly reuse brand assets or others' finished ads. Footage, music, and sound effects used must be licensed or VJshi in-site content.</p>
+          </div>
+          <div class="spec">
+            <div class="spec-n">4</div>
+            <p><b>Review &amp; delivery:</b> Provide the main storyline outline, mid-roll script, and complete video for brand approval before publishing. After publishing, provide the original video file and grant the brand secondary distribution rights, and support comment-section maintenance and data reporting.</p>
+          </div>
+        </div>
+      </section>
+      </div>
+      </section>
+
+      <!-- ================= 06 General requirements ================= -->
+      <section id="general">
+        <div class="sec-head">
+          <span class="sec-num">SECTION 04</span>
+          <h2>General collaboration requirements</h2>
+          <p class="sec-desc">The following 7 requirements apply to all video, image-text, and clip collaborations; format-specific specifications are listed in the corresponding chapters.</p>
+        </div>
+
+        <div class="req-list">
+          <div class="req">
+            <div class="req-n">01</div>
+            <p>Place orders through Xingtu / Huahuo / Pugongying or sign a creator promotion contract <span class="quote-tag">*subject to actual discussion</span></p>
+          </div>
+          <div class="req">
+            <div class="req-n">02</div>
+            <p>The creator must provide a script outline and sample for review</p>
+          </div>
+          <div class="req">
+            <div class="req-n">03</div>
+            <p>The creator is responsible for maintaining the comment section during publishing and promotion</p>
+          </div>
+          <div class="req">
+            <div class="req-n">04</div>
+            <p>Content must be distributed across all platforms <span class="quote-tag">*subject to actual discussion</span></p>
+          </div>
+          <div class="req">
+            <div class="req-n">05</div>
+            <p>The creator must provide the brand with relevant promotion data</p>
+          </div>
+          <div class="req">
+            <div class="req-n">06</div>
+            <p>After publishing, the creator must provide the client with the original video / image files and authorize the client to redistribute them on social media platforms</p>
+          </div>
+          <div class="req">
+            <div class="req-n">07</div>
+            <p>For video, image-text, and clip collaborations, promotion data (views / plays, engagement, saves) must be reported within <span class="limit">7 days</span> of publishing, and content must remain live for at least <span class="limit">1 year</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Appendix ================= -->
+      <section id="overseas" class="appendix">
+        <div class="sec-head">
+          <span class="sec-num">APPENDIX</span>
+          <h2>Overseas creator brief notes</h2>
+        </div>
+
+        <div class="card">
+          <h3>1. Platform &amp; video requirements</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>Required</td><td>① Brand name VJshi; ② screen recordings of the website or the asset download/use process; ③ demonstrations of the actual effect of the footage, music, or sound effects</td></tr>
+              <tr><td>Aspect ratio &amp; language</td><td>Spoken language is flexible, but Chinese subtitles are required. For Southeast Asian markets, bilingual subtitles are recommended (Chinese + Indonesian / Vietnamese / Thai).</td></tr>
+              <tr><td>Deliverables</td><td>Final video file + cover image + copy; subject to the contract.</td></tr>
+              <tr><td>Website language</td><td>The website is currently primarily in Chinese; you may demo using the Chinese interface.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>2. Content directions</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>Pain-point solution</td><td>Establish the pain point first, then present the solution. Examples: “The client wants a Chinese feel, but I can't find it in any overseas library” or “Shooting Chinese scenes overseas is too expensive—use stock instead.”</td></tr>
+              <tr><td>Workflow integration</td><td>Make VJshi one step in the workflow; ideal for editing tutorials, color grading, and sound-design accounts. Examples: “A complete workflow from script to final cut for an ad” or “I built a Chinese New Year ad entirely from stock footage.”</td></tr>
+              <tr><td>Finished-film validation</td><td>Produce a Chinese-style finished film independently with VJshi assets and let the result prove feasibility. Examples: “I made a 30-second ad using only stock-library shots” or “How much difference does a different asset set make to the same script?”</td></tr>
+              <tr><td>Platform comparison</td><td>Compare with major international stock platforms and explain the differences (Chinese subject matter, licensing territory, licensing format). Examples: “Stock-site roundup recommendations” or “How big is the difference between stock libraries?”</td></tr>
+              <tr><td>Local China-themed creation</td><td>Serve local creators working on China-related subjects. Examples: “Editing a film about China in the US—where does the footage come from?” or “I've never been to China, yet I cut a China travel film.”</td></tr>
+              <tr><td>AI + live-action hybrid</td><td>Discuss a hybrid workflow combining AI generation and live-action footage, with VJshi providing authentic base footage. Examples: “AI generation + live-action footage: my hybrid workflow” or “How to make AI films look more real.”</td></tr>
+            </tbody>
+          </table>
+
+          <h3>3. Selling points you can highlight</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>Exclusive China-related content</td><td>Rich Chinese locations, culture, and festival footage—something international platforms can hardly replace, ideal for projects that need a “Chinese feel.”</td></tr>
+              <tr><td>Global licensing</td><td>Assets are licensed worldwide and cleared for commercial use.</td></tr>
+              <tr><td>One-stop</td><td>Video, music, images, and sound effects in one place, reducing the cost of searching multiple sites and checking rights.</td></tr>
+              <tr><td>Search efficiency</td><td>Keyword and asset-ID search; AI search supports long sentences and colloquial descriptions; drag in an image to find similar visuals.</td></tr>
+              <tr><td>Cost</td><td>Compared with local live-action or custom shoots, using stock for China-themed shots costs less (no specific savings percentage is promised).</td></tr>
+              <tr><td>Open to original creators (sellers)</td><td>If the creator has original assets, explain that the platform accepts creator submissions; revenue share and rules are subject to the official website.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>4. Overseas copyright &amp; compliance (required reading)</h3>
+          <table class="tbl">
+            <tbody>
+              <tr><td>Scope of use</td><td>VJshi assets may be used only for the content specified in this agreement; they may not be resold, redistributed for commercial use, or provided to third parties.</td></tr>
+              <tr><td>Licensing territory</td><td>VJshi assets are licensed worldwide.</td></tr>
+              <tr><td>Ad disclosure</td><td>Disclose paid partnerships in line with local regulations and platform rules: US FTC—#ad or “Paid partnership with VJshi”; UK ASA—#ad; EU—enable the platform's “paid partnership” label and state “advertising” on the first screen or in the description; YouTube—tick “Paid promotion”; TikTok—enable “Branded content.”</td></tr>
+              <tr><td>Culture &amp; account</td><td>Avoid local religious, holiday, and politically sensitive topics, and avoid stereotypes; the account must have no violations, borderline content, or controversial statements in the past 3 months; follow each platform's external-link and traffic-diversion rules.</td></tr>
+              <tr><td>Data &amp; privacy</td><td>Never show licensing prices in the video or description; blur any such screens. Personal information such as others' email addresses, account names, or order details must be blurred (GDPR / CCPA).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="page-foot">
+        VJshi · Creator Collaboration Handbook　V3.0<br>
+        This handbook supports creator collaboration discussions; final terms are subject to the signed contract and written confirmation by both parties.
+      </footer>
+</template>
+
+<script>
+  (function () {
+    var bar = document.getElementById('progress');
+    var main = document.querySelector('main');
+    var zhMain = main.innerHTML;
+    var tpl = document.getElementById('tpl-main-en');
+    var enMain = tpl ? tpl.innerHTML : zhMain;
+
+    var langBtns = Array.prototype.slice.call(document.querySelectorAll('[data-set-lang]'));
+    var i18nNodes = Array.prototype.slice.call(document.querySelectorAll('[data-en]')).map(function (el) {
+      return { el: el, zh: el.textContent, en: el.getAttribute('data-en') };
+    });
+    var foot = document.querySelector('[data-en-html]');
+    var footZh = foot ? foot.innerHTML : '';
+    var footEn = foot ? foot.getAttribute('data-en-html') : '';
+
+    var links = [];
+    var targets = [];
+    function collectNav() {
+      links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      targets = links.map(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        return document.getElementById(id);
+      });
+    }
+
+    function updateProgress() {
+      var doc = document.documentElement;
+      var total = doc.scrollHeight - window.innerHeight;
+      var ratio = total > 0 ? (window.scrollY / total) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, ratio)) + '%';
+    }
+
+    function updateActive() {
+      var pos = window.scrollY + 150;
+      var current = null;
+      targets.forEach(function (t, i) {
+        if (t && t.offsetParent !== null && t.offsetTop <= pos) current = i;
+      });
+      if (current === null && targets[0]) current = 0;
+      links.forEach(function (a, i) {
+        a.classList.toggle('active', i === current);
+      });
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          updateProgress();
+          updateActive();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    function applyLang(next, keepPosition) {
+      var sectionId = null;
+      var offset = 0;
+      var openStates = [];
+      if (keepPosition) {
+        var secs = Array.prototype.slice.call(main.querySelectorAll('header.hero, section')).filter(function (s2) { return s2.offsetParent !== null; });
+        var y = window.scrollY + 150;
+        var cur = secs[0];
+        secs.forEach(function (s) { if (s.offsetTop <= y) cur = s; });
+        if (cur) {
+          sectionId = cur.id;
+          offset = window.scrollY - cur.offsetTop;
+        }
+        openStates = Array.prototype.slice.call(main.querySelectorAll('details')).map(function (d) { return d.open; });
+      }
+
+      document.documentElement.lang = next;
+      document.title = next === 'en' ? 'VJshi · Creator Collaboration Handbook' : '光厂 · 达人合作手册';
+      var logo = document.querySelector('.brand-mark img');
+      if (logo) logo.alt = next === 'en' ? (logo.getAttribute('data-en-alt') || logo.alt) : '光厂 Logo';
+      main.innerHTML = next === 'en' ? enMain : zhMain;
+      initTabs(false);
+
+      i18nNodes.forEach(function (n) {
+        n.el.textContent = next === 'en' ? n.en : n.zh;
+      });
+      if (foot) foot.innerHTML = next === 'en' ? footEn : footZh;
+      langBtns.forEach(function (b) {
+        var on = b.getAttribute('data-set-lang') === next;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+
+      var ds = main.querySelectorAll('details');
+      openStates.forEach(function (o, i) { if (ds[i]) ds[i].open = o; });
+
+      if (keepPosition && sectionId) {
+        var el = document.getElementById(sectionId);
+        if (el) window.scrollTo(0, el.offsetTop + offset);
+      }
+
+      collectNav();
+      updateProgress();
+      updateActive();
+      try { localStorage.setItem('vjshi-handbook-lang', next); } catch (e) {}
+    }
+
+
+    var MODE_IDS = ['video-coop', 'image-coop', 'clip-coop'];
+    var TITLES = {
+      zh: {'video-coop':'视频合作详情','image-coop':'图文合作详情','clip-coop':'切片（中插）合作详情'},
+      en: {'video-coop':'Video collaboration details','image-coop':'Image-text collaboration details','clip-coop':'Clip (mid-roll) collaboration details'}
+    };
+    var activeMode = null;
+    var setMode = function () {};
+
+    function initTabs(first) {
+      var cards = Array.prototype.slice.call(main.querySelectorAll('.mode-card'));
+      var panels = Array.prototype.slice.call(main.querySelectorAll('.coop-panel'));
+      var detail = main.querySelector('#coop-detail');
+      if (!cards.length || !panels.length || !detail) return;
+
+      function langKey() { return document.documentElement.lang === 'en' ? 'en' : 'zh'; }
+
+      function paint() {
+        cards.forEach(function (c) {
+          var on = c.getAttribute('data-target') === activeMode;
+          c.classList.toggle('is-active', on);
+          c.setAttribute('aria-selected', on ? 'true' : 'false');
+          var act = c.querySelector('.gc-action');
+          if (act) act.textContent = on ? c.getAttribute('data-active-label') : c.getAttribute('data-label');
+        });
+        panels.forEach(function (p) { p.hidden = p.id !== activeMode; });
+        var tt = main.querySelector('.cd-title');
+        if (tt) tt.textContent = activeMode ? (TITLES[langKey()][activeMode] || '') : '';
+        Array.prototype.forEach.call(main.querySelectorAll('.cd-links a'), function (a, i) {
+          a.classList.toggle('active', i === 0);
+        });
+        Array.prototype.forEach.call(document.querySelectorAll('.nav-link'), function (a) {
+          if (activeMode) a.classList.toggle('active', a.getAttribute('href') === '#' + activeMode);
+        });
+      }
+
+      function setHash(id) {
+        try {
+          history.replaceState(null, '', id ? ('#' + id) : (location.pathname + location.search));
+        } catch (e) {}
+      }
+
+      function jumpToCards() {
+        var el = main.querySelector('.mode-switch');
+        if (!el) return;
+        var top = el.getBoundingClientRect().top + window.scrollY - 24;
+        try { window.scrollTo({ top: top, behavior: 'instant' }); } catch (e) { window.scrollTo(0, top); }
+      }
+
+      function cardsVisible() {
+        var el = main.querySelector('.mode-switch');
+        if (!el) return;
+        var r = el.getBoundingClientRect();
+        if (r.bottom < 80 || r.top > window.innerHeight - 80) jumpToCards();
+      }
+
+      function openMode(id) {
+        activeMode = id;
+        detail.hidden = false;
+        paint();
+      }
+
+      function closeDetail() {
+        if (detail.hidden) { activeMode = null; paint(); return; }
+        detail.classList.add('is-hiding');
+        setTimeout(function () {
+          detail.hidden = true;
+          detail.classList.remove('is-hiding');
+          activeMode = null;
+          paint();
+          cardsVisible();
+        }, 140);
+      }
+
+      function toggleMode(id) {
+        if (id === activeMode) { closeDetail(); setHash(null); }
+        else { openMode(id); setHash(id); }
+      }
+
+      cards.forEach(function (c) {
+        c.addEventListener('click', function () {
+          toggleMode(c.getAttribute('data-target'));
+        });
+      });
+
+      Array.prototype.forEach.call(main.querySelectorAll('[data-close-detail]'), function (btn) {
+        btn.addEventListener('click', function () { closeDetail(); setHash(null); });
+      });
+
+      Array.prototype.forEach.call(main.querySelectorAll('.cd-links a'), function (a) {
+        a.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          var panel = main.querySelector('.coop-panel:not([hidden])');
+          if (!panel) return;
+          var kind = a.getAttribute('data-jump');
+          var el = null;
+          if (kind === 'directions') el = panel.querySelector('.direction');
+          if (kind === 'cases') el = panel.querySelector('details');
+          if (kind === 'specs') {
+            el = Array.prototype.slice.call(panel.querySelectorAll('h3')).filter(function (h) {
+              return /内容规格要求|Content specifications/.test(h.textContent);
+            })[0];
+          }
+          if (el) el.scrollIntoView({ block: 'start' });
+          Array.prototype.forEach.call(main.querySelectorAll('.cd-links a'), function (x) {
+            x.classList.toggle('active', x === a);
+          });
+        });
+      });
+
+      setMode = function (id, toCards) {
+        openMode(id);
+        if (toCards) jumpToCards();
+      };
+
+      if (first) {
+        var h = location.hash.slice(1);
+        if (MODE_IDS.indexOf(h) > -1) {
+          openMode(h);
+          setTimeout(jumpToCards, 60);
+        } else {
+          activeMode = null;
+          detail.hidden = true;
+          paint();
+        }
+      } else if (activeMode) {
+        detail.hidden = false;
+        paint();
+      } else {
+        detail.hidden = true;
+        paint();
+      }
+    }
+
+    window.addEventListener('hashchange', function () {
+      var h = location.hash.slice(1);
+      if (MODE_IDS.indexOf(h) > -1) setMode(h, true);
+    });
+
+    langBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var next = btn.getAttribute('data-set-lang');
+        if (next !== document.documentElement.lang) applyLang(next, true);
+      });
+    });
+
+    var saved = 'zh';
+    try { saved = localStorage.getItem('vjshi-handbook-lang') || 'zh'; } catch (e) {}
+    if (saved === 'en') applyLang('en', false);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    collectNav();
+    updateProgress();
+    updateActive();
+    initTabs(true);
+  })();
+</script>
+
+
+
+
+
+<script>
+(function () {
+  function activate(tab) {
+    var box = tab.closest('.biz-roles');
+    if (!box) return;
+    var role = tab.getAttribute('data-role');
+    Array.prototype.forEach.call(box.querySelectorAll('.br-tab'), function (t) {
+      var on = t === tab;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+    });
+    Array.prototype.forEach.call(box.querySelectorAll('.br-panel'), function (p) {
+      var on = p.id === (box.getAttribute('data-biz') + '-panel-' + role);
+      p.classList.toggle('is-active', on);
+      p.hidden = !on;
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.br-tab') : null;
+    if (t) { activate(t); return; }
+    var m = e.target.closest ? e.target.closest('.br-more') : null;
+    if (!m) return;
+    var detail = m.closest('.br-panel').querySelector('.br-detail');
+    var open = m.getAttribute('aria-expanded') === 'true';
+    m.setAttribute('aria-expanded', open ? 'false' : 'true');
+    m.querySelector('.br-more-label').textContent = open ? m.getAttribute('data-more') : m.getAttribute('data-less');
+    if (detail) detail.hidden = open;
+  });
+
+  document.addEventListener('keydown', function (e) {
+    var t = e.target.closest ? e.target.closest('.br-tab') : null;
+    if (!t) return;
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var tabs = Array.prototype.slice.call(t.closest('.br-tabs').querySelectorAll('.br-tab'));
+    var i = tabs.indexOf(t);
+    var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+    if (next) { e.preventDefault(); activate(next); next.focus(); }
+  });
+})();
+</script>
+</body></html>
